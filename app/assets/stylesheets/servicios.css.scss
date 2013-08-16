@@ -1,0 +1,85 @@
+$color1: #158CCF;
+
+#servicios{
+	min-height:40em;
+	.servicios{
+		max-width: 1200px;
+		margin:auto;
+		margin-top: 2em;
+	}
+	#lista-servicios,.info{display:inline-block;}
+	#lista-servicios{
+		width: 18em;
+		float: left;
+		margin-top: 10%;
+		ul{
+			text-align:left;
+			a{
+				color:#ccc;
+				line-height: 1.7em;
+				font-weight: bold;
+				font-size: 1.5rem;
+				font-family: "Merriweather";
+				&:hover{
+					color:#333;
+				}
+				li{
+					margin:0.5em 0em;
+					text-indent: 0.6em;
+					border-bottom:2px solid;
+					border-right:2px solid;
+					-webkit-transition: all 0.3s ease-in;
+					-moz-transition: all 0.3s ease-in;
+					-o-transition: all 0.3s ease-in;
+					&:hover{
+						-webkit-transform: scale(1.05);
+						-moz-transform: scale(1.05);
+						-o-transform: scale(1.05);
+					}
+				}
+			}		
+		}
+	}
+	.info{
+		display: none;
+		width: 47em;
+		-webkit-animation: cssAnimation 0.5s ease;
+		-moz-animation: cssAnimation 0.5s ease;
+		-o-animation: cssAnimation 0.5s ease;
+		h1{
+			color:$color1;
+			text-align: right;
+			padding:1em;
+			font-family:"Merriweather";
+			font-size: 1.8rem;
+			font-style:italic;
+		}
+		ul{
+			text-align: left;
+			margin-left: 2em;
+			li{
+				list-style-type: circle;
+				text-indent: 1em;
+				margin-top: 1em;
+				color: #555;
+				font-size: 1.5rem;
+				font-family:"Cabin Condensed";
+			}
+		}
+	}
+
+	#consultoria.info{display:inline-block;}
+}
+
+@-webkit-keyframes cssAnimation {
+	from { -webkit-transform:scale(0);}
+	to { -webkit-transform: scale(1);}
+}
+@-moz-keyframes cssAnimation {
+	from { -moz-transform:scale(0);}
+	to { -moz-transform: scale(1);}
+}
+@-o-keyframes cssAnimation {
+	from { -o-transform:scale(0);}
+	to { -o-transform: scale(1);}
+}

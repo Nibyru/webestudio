@@ -1,0 +1,218 @@
+header
+	nav
+		#logo
+			a href="#home"
+				=image_tag("logo.png")
+
+		ul
+			a href="#home"
+				li HOME	
+			a href="#nosotros"
+				li NOSOTROS
+			a href="#servicios"
+				li SERVICIOS
+			a href="#links"
+				li LINKS
+			a href="#contacto"
+				li CONTACTO
+
+
+
+section#home
+	h2 Home
+
+
+section#nosotros
+	h2 Nosotros
+
+
+section#servicios
+	.servicios
+		#lista-servicios
+			ul
+				a href="#servicios"
+					li.btn-consultoria
+						| Consultoría y Gestión 
+				a href="#servicios"
+					li.btn-contable
+						| Contable
+				a href="#servicios"
+					li.btn-tributario
+						| Tributario
+				a href="#servicios"
+					li.btn-auditoria
+						| Auditoría
+				a href="#servicios"
+					li.btn-laboral
+						| Laboral 
+				a href="#servicios"
+					li.btn-societario
+						| Societario
+
+		#consultoria.info
+			h1 Consultoría y Gestión
+			ul
+			  - 5.times do
+			    li
+						| Texto consultoría y gestión texto consultoría y gestión texto consultoría y gestión texto consultoría y gestión texto consultoría y gestión texto consultoría y gestión.
+
+		#contable.info
+			h1 Contable
+			ul
+			  - 5.times do
+			    li
+						| Texto contable texto contable texto contable texto contable texto contable texto contable texto contable texto contable texto contable texto contable texto contable texto contable.
+
+		#tributario.info
+			h1 Tributario
+			ul
+			  - 5.times do
+			    li
+						| Texto tributario texto tributario texto tributario texto tributario texto tributario texto tributario texto tributario texto tributario texto tributario texto tributario texto tributario.
+
+		#auditoria.info
+			h1 Auditoría
+			ul
+			  - 5.times do
+			    li
+						| Texto auditoría texto auditoría texto auditoría texto auditoría texto auditoría texto auditoría texto auditoría texto auditoría texto auditoría texto auditoría texto auditoría.
+
+		#laboral.info
+			h1 Laboral
+			ul
+			  - 5.times do
+			    li
+						| Texto laboral texto laboral texto laboral texto laboral texto laboral texto laboral texto laboral texto laboral texto laboral texto laboral texto laboral texto laboral texto laboral texto laboral.
+
+		#societario.info
+			h1 Societario
+			ul
+			  - 5.times do
+			    li
+						| Texto societario texto societario texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto societario texto societario texto societario.
+
+
+
+section#links
+	// AFIP, ANSES, Rentas, Ministerio de economía, BCRA, Consejo Profesional de Cs Economicas, INDEC, Ministerio de Trabajo 
+	.links
+		h2 Links útiles
+		ul
+			li
+				a href="http://www.afip.gov.ar/" target="_blank" 
+					=image_tag("afip.png")
+					#texto
+						h3 Administración Federal de Ingresos Públicos
+			li
+				a href="http://www.anses.gob.ar/" target="_blank"  
+					=image_tag("anses.png")
+					#texto
+						h3 Administración Nacional de la Seguridad Social
+			li
+				a href="http://www.bcra.gov.ar/" target="_blank"  
+					=image_tag("bcra.png")
+					#texto
+						h3 Banco Central de la República Argentina
+			li
+				a href="http://www.indec.com.ar/indec.gov.ar.htm" target="_blank"  
+					=image_tag("indec.png")
+					#texto
+						h3 Instituto Nacional de Estadística y Censos
+			li
+				a href="http://www.trabajo.gob.ar/" target="_blank"  
+					=image_tag("min-trabajo.png")
+					#texto
+						h3 Ministerio de Trabajo, Empleo y Seguridad Social
+			li
+				a href="http://www.consejo.org.ar/" target="_blank"  
+					=image_tag("cpce.png")
+					#texto
+						h3 Consejo Profesional de Ciencias Económicas
+			li
+				a href="http://www.mecon.gov.ar/" target="_blank"  
+					=image_tag("min-economia.png")
+					#texto
+						h3 Ministerio de Economía y Finanzas Públicas
+			li
+				a href="http://www.afip.gov.ar/" target="_blank" 
+					=image_tag("afip.png")
+					#texto
+						h3 Administración Federal de Ingresos Públicos
+			li
+				a href="http://www.afip.gov.ar/" target="_blank" 
+					=image_tag("afip.png")
+					#texto
+						h3 Administración Federal de Ingresos Públicos
+			li
+				a href="http://www.afip.gov.ar/" target="_blank" 
+					=image_tag("afip.png")
+					#texto
+						h3 Administración Federal de Ingresos Públicos
+			li
+				a href="http://www.afip.gov.ar/" target="_blank" 
+					=image_tag("afip.png")
+					#texto
+						h3 Administración Federal de Ingresos Públicos
+			li
+				a href="http://www.afip.gov.ar/" target="_blank" 
+					=image_tag("afip.png")
+					#texto
+						h3 Administración Federal de Ingresos Públicos
+
+
+
+section#contacto
+	.contacto
+		.cont-contacto
+			#mapa
+				<iframe width="450" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.ar/maps?f=q&amp;source=s_q&amp;hl=es-419&amp;geocode=&amp;q=San+Miguel+de+Tucum%C3%A1n,+Tucum%C3%A1n+av+roca+701&amp;aq=t&amp;sll=-24.79133,-65.426864&amp;sspn=0.181399,0.338173&amp;ie=UTF8&amp;hq=&amp;hnear=Av+Gral.+Roca+701,+San+Miguel+de+Tucum%C3%A1n,+Tucum%C3%A1n&amp;ll=-26.842602,-65.210637&amp;spn=0.002786,0.005284&amp;t=m&amp;z=14&amp;output=embed"></iframe><br />
+			
+			#formulario
+				form
+					h3 Para ponerse en contacto con nosotros, por favor complete el formulario y nos comunicaremos a la brevedad.
+					.linea
+						label Nombre:
+						input type="text"
+					.linea
+						label Empresa:
+						input type="text"
+					.linea
+						label Dirección:
+						input type="text"
+					.linea
+						label Teléfono:
+						input type="text"
+					.linea
+						label E-mail:
+						input type="text"
+					.linea
+						label Consulta:
+						textarea name="Consultas"
+						input type="submit" value="ENVIAR"
+
+
+	.iconos
+		.informacion
+			| 1234 Main Street Atlanta, GA 30305  |  404.555.5555  |
+			a href="correo@gmail.com"
+				i.icon-envelope-alt 
+				|  correo@gmail.com
+
+		ul
+			li
+				a href="https://www.facebook.com/"
+					i.icon-facebook
+			li
+				a href="https://www.twitter.com/"
+					i.icon-twitter
+			li
+				a href="https://plus.google.com/"
+					i.icon-google-plus
+			li
+				a href="http://ar.linkedin.com/"
+					i.icon-linkedin
+    
+footer
+	| Created by 
+	a href="http://nibyru.com/"
+		| Nibyru
