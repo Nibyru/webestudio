@@ -10,6 +10,9 @@ $(function() {
             animate.removeClass('display-none').addClass("display");
         } 
     });
+
+	//Scroll Spy Refresh
+	$('#navbar').scrollspy()
 });
 
 
@@ -20,9 +23,6 @@ $(".scroll").click(function(event){
 	$("html,body").animate({scrollTop:$(this.hash).offset().top}, 400)
 });
 
-
-//Scroll Spy Refresh
-$('#navbar').scrollspy()
 
 
 //Scroll To Top

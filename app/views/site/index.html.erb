@@ -11,17 +11,7 @@
 	<meta property="og:url" content="">
 	<meta property="og:site_name" content="">
 	<meta property="og:description" content="">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="http://themearmada.com/demos/lava/onepage/css/flexslider.css">
-  <link rel="stylesheet" href="http://themearmada.com/demos/lava/onepage/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://themearmada.com/demos/lava/onepage/css/animate.css">
-
-  <link rel="stylesheet" href="http://themearmada.com/demos/lava/onepage/css/bootstrap.min.css">
-  <%= stylesheet_link_tag "application" %>
-  <link rel="stylesheet" href="http://themearmada.com/demos/lava/onepage/css/custom-styles.css">
-
-
+  <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag 'ga.js' %>
   <%= javascript_include_tag 'modernizr-2.6.2-respond-1.1.0.min.js' %>
 
@@ -449,19 +439,17 @@
     <%= javascript_include_tag 'user_timeline.json' %>
     
     <script>
-      !function ($) {
+    $(document).ready(function(){
         $(function(){
           $('#header').carousel()
-        })
-      }(window.jQuery)
+        });
+        $(window).load(function() {
+          $('.flexslider').flexslider({
+            animation: "slide"
+          });
+        });
+    })
     </script>
     
-    <script>
-        $(window).load(function() {
-      $('.flexslider').flexslider({
-        animation: "slide"
-      });
-    });
-    </script> 
-    
-</body></html>
+  </body>
+</html>
