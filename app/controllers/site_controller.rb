@@ -2,12 +2,7 @@ class SiteController < ApplicationController
 	before_filter :authenticate_admin!, only: :admin
 
 	def index
-	end
-
-	def create
-		puts "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
-		@link = Link.create(params[:link]) if params[:link]
-		@link.save
+		@links = Link.all
 	end
 
 	def admin

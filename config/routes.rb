@@ -3,7 +3,7 @@ Webestudio::Application.routes.draw do
 
   root :to => 'site#index'
   match 'admin' => 'site#admin'
-  resource :site
+  resources :links
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
