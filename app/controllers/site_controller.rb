@@ -5,6 +5,9 @@ class SiteController < ApplicationController
 		@links = Link.all
 	end
 
+	def services
+	end
+	
 	def admin
 		@link  = Link.new
 		@links = Link.all
