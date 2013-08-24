@@ -17,4 +17,5 @@
 //= require jquery.flexslider-min
 //= require rotate
 //= require twitter-feed
+//= require jquery_nested_form
 
