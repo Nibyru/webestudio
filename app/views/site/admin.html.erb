@@ -8,21 +8,8 @@
 	</li>
 <% end %>
 </ul>
-<a href="#newLink" role="button" class="btn" data-toggle="modal">Nuevo Link</a>
- 
-<!-- Modal -->
-<div id="newLink" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Nuevo Link</h3>
-  </div>
-  <div class="modal-body">
-    <%= simple_form_for @link do |f| %>
+  <%= simple_form_for @link do |f| %>
 	  <%= f.input  :name %>
 	  <%= f.input  :url %>
-  </div>
-    <div class="modal-footer">
-  	  <%= f.button :submit %>
-    </div>
+  	<%= f.button :submit, 'Crear nuevo link' %>
 	<% end %>
-</div>
