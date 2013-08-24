@@ -263,7 +263,7 @@ a:hover {
    ========================================================================== */
 
 .navbar-inverse .navbar-inner {
-  background: #3973A0;
+  background: -webkit-linear-gradient(top, #3973A0 30%, #FFDD00 50%, #3973A0 70%);
   background-repeat: repeat-x;
   border-color: #3973A0;
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#44ADFF', endColorstr='#44ADFF', GradientType=0)
