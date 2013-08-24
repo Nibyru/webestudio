@@ -19,7 +19,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
 gem 'slim'
 gem 'devise'
 gem 'nested_form'

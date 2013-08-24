@@ -4,11 +4,11 @@
 <ul>
 <% @links.each do |link| %>
 	<li>
-		<%= link.name %>
+		<%= link.name %> | <%= link_to "borrar", link, method: :delete %> 
 	</li>
 <% end %>
 </ul>
-<a href="#newLink" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+<a href="#newLink" role="button" class="btn" data-toggle="modal">Nuevo Link</a>
  
 <!-- Modal -->
 <div id="newLink" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -17,9 +17,8 @@
     <h3 id="myModalLabel">Nuevo Link</h3>
   </div>
   <div class="modal-body">
-    <%= simple_form_for :link, controller: 'site', action: 'create' do |f| %>
+    <%= simple_form_for @link do |f| %>
 	  <%= f.input  :name %>
-	  <%= f.input  :description %>
 	  <%= f.input  :url %>
   </div>
     <div class="modal-footer">
