@@ -41,68 +41,19 @@
     <section id="services">
       <div class="container">
         <div class="row text-center">
-          
-          <!--Seciton 1-->
-          <div class="span4 service margin-30">
-            <%= link_to services_path do %>
-              <i class="icon-mobile-phone icon-4x light-gray"></i>
-              <h3>Consultoría y Gestión</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <% @services.each_with_index do |service, index| %>
+            <div class="span4 service margin-30">
+              <%= link_to services_path do %>
+                <i class="<%= service.symbol %> icon-4x light-gray"></i>
+                <h3><%= service.title %></h3>
+                <p><%= service.header %></p>
+              <% end %>
+            </div>
+            <% if ((index+1) % 3) == 0 %>
+              </div>
+              <div class="row text-center">
             <% end %>
-          </div>
-          
-          <!--Seciton 2-->
-          <div class="span4 service margin-30">
-            <%= link_to services_path do %>
-              <i class="icon-thumbs-up icon-4x light-gray"></i>
-              <h3>Contable</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <% end %>
-
-          </div>
-          
-          <!--Seciton 3-->
-          <div class="span4 service margin-30">
-            <%= link_to services_path do %>
-              <i class="icon-flag icon-4x light-gray"></i>
-              <h3>Tributario</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <% end %>
-
-          </div>
-          
-        </div>
-        <div class="row text-center">
-          
-          <!--Seciton 4-->
-          <div class="span4 service margin-30">
-            <%= link_to services_path do %>
-              <i class="icon-mobile-phone icon-4x light-gray"></i>
-              <h3>Auditoría</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <% end %>
-          </div>
-          
-          <!--Seciton 5-->
-          <div class="span4 service margin-30">
-            <%= link_to services_path do %>
-              <i class="icon-thumbs-up icon-4x light-gray"></i>
-              <h3>Laboral</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <% end %>
-
-          </div>
-          
-          <!--Seciton 3-->
-          <div class="span4 service margin-30">
-            <%= link_to services_path do %>
-              <i class="icon-flag icon-4x light-gray"></i>
-              <h3>Societario</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <% end %>
-
-          </div>
-          
+          <% end %>
         </div>
       </div>
     </section>
@@ -156,7 +107,7 @@
               </div>
               <% if ((index+1) % 4) == 0 %>
                 </div>
-                <div class="row margin-40">
+                <div class="row text-center">
               <% end %>
             <% end %>
             </div>

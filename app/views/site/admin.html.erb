@@ -4,6 +4,24 @@
 		<h1>Admin Site</h1>
 
 		<section>
+			<h1>Servicios</h1>
+			<ul>
+			<% @services.each do |service| %>
+				<li>
+					<%= service.title %> | <%= link_to "borrar", service, method: :delete %> 
+				</li>
+			<% end %>
+			</ul>
+		    <%= simple_form_for @service do |f| %>
+		  	  <%= f.input  :symbol %>
+		      <%= f.input  :title %>
+		      <%= f.input  :header %>
+		      <%= f.input  :body %>
+		      <%= f.button :submit, 'Agregar servicio' %>
+		  	<% end %>
+		</section>
+
+		<section>
 			<h1>Nosotros</h1>
 			<p>Integrantes</p>
 			<ul>
