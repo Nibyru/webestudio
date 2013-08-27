@@ -1,0 +1,32 @@
+$azul:#3973A0;
+
+#services{
+	width:67em;
+	margin:auto;
+	h2{
+		color: #eee;
+		text-shadow: 1px 1px 0px #888;
+		font-weight: bold;
+		font-size: 50px;
+		text-align: center;
+	}
+	article{
+		padding: 2em 0;
+		border-bottom: 2px dashed #ddd;
+		h3{
+			color:$azul;
+			font-weight: 400;
+			font-size: 30px;
+		}
+		li{
+			font-family: 'Open Sans', sans-serif;
+			font-size: 18px;
+			line-height: 26px;
+			font-weight: 300;
+			color: #333;
+			margin:1em 0;
+			list-style-type: circle;
+		}
+	}
+	#societarios{border:none;}
+}
