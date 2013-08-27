@@ -3,6 +3,10 @@ class SiteController < ApplicationController
 	before_filter :data_collector, only: [:index, :admin]
 	before_filter :instance_object, only: [:index, :admin]
 
+	def services
+		@services = Service.all
+	end
+
 private
 	def instance_object
 		@link     = Link.new
