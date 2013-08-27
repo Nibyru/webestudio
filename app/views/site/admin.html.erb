@@ -1,17 +1,46 @@
-<h1>Admin Site</h1>
+<div class="container" style="margin: 100px auto; background: url(grid_noise.png) repeat;">
+  <div class="row">
+    <div class="span12">
+		<h1>Admin Site</h1>
 
-<h1>Links</h1>
-<ul>
-<% @links.each do |link| %>
-	<li>
-		<%= link.name %> | <%= link_to "borrar", link, method: :delete %>
-    <%= image_tag(link.photo_url) if link.photo? %> 
-	</li>
-<% end %>
-</ul>
-  <%= simple_form_for @link, html: {multipart: true} do |f| %>
-	  <%= f.input  :name %>
-    <%= f.input  :url %>
-	  <%= f.input  :photo %>
-  	<%= f.button :submit, 'Crear nuevo link' %>
-	<% end %>
+		<section>
+			<h1>Nosotros</h1>
+			<p>Integrantes</p>
+			<ul>
+			<% @users.each do |user| %>
+				<li>
+					<%= user.name %> | <%= link_to "borrar", user, method: :delete %>
+			    	<%= image_tag(user.photo_url(:avatar)) if user.photo? %> 
+				</li>
+			<% end %>
+			</ul>
+		    <%= simple_form_for @user, html: {multipart: true} do |f| %>
+		  	  <%= f.input  :name %>
+		      <%= f.input  :job %>
+		      <%= f.input  :twitter %>
+		      <%= f.input  :facebook %>
+		  	  <%= f.input  :photo %>
+		      <%= f.button :submit, 'Agregar nuevo integrante' %>
+		  	<% end %>
+		</section>
+
+		<section>
+			<h1>Links</h1>
+			<ul>
+			<% @links.each do |link| %>
+				<li>
+					<%= link.name %> | <%= link_to "borrar", link, method: :delete %>
+			    	<%= image_tag(link.photo_url(:link)) if link.photo? %> 
+				</li>
+			<% end %>
+			</ul>
+		    <%= simple_form_for @link, html: {multipart: true} do |f| %>
+		  	  <%= f.input  :name %>
+		      <%= f.input  :url %>
+		  	  <%= f.input  :photo %>
+		      <%= f.button :submit, 'Crear nuevo link' %>
+		  	<% end %>
+		</section>
+    </div>
+  </div>
+</div>

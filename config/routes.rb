@@ -5,6 +5,7 @@ Webestudio::Application.routes.draw do
   match 'admin' => 'site#admin'
   get 'services' => 'site#services'
   resources :links
+  resources :users
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

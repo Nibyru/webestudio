@@ -1,7 +1,6 @@
 class LinksController < ApplicationController
 
 	def create
-		puts "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
 		@link = Link.create(params[:link]) if params[:link]
 		redirect_to admin_path
 	end
