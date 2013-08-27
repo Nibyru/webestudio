@@ -239,7 +239,8 @@
         <% end %>
           <div class="span4">
             <div class="thumbs">
-              <%= image_tag('portfolio1.jpg', :alt => 'Image Size 430x280') %>
+              <%= image_tag(link.photo_url(:link)) if link.photo? %>
+              <%#= image_tag('portfolio1.jpg', :alt => 'Image Size 430x280') %>
               <a href="<%= link.url %>" target="_blank">
                 <span class="title">
                   <span><i class="icon-link icon-2x"></i></span>

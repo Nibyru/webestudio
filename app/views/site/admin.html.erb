@@ -4,12 +4,14 @@
 <ul>
 <% @links.each do |link| %>
 	<li>
-		<%= link.name %> | <%= link_to "borrar", link, method: :delete %> 
+		<%= link.name %> | <%= link_to "borrar", link, method: :delete %>
+    <%= image_tag(link.photo_url) if link.photo? %> 
 	</li>
 <% end %>
 </ul>
-  <%= simple_form_for @link do |f| %>
+  <%= simple_form_for @link, html: {multipart: true} do |f| %>
 	  <%= f.input  :name %>
-	  <%= f.input  :url %>
+    <%= f.input  :url %>
+	  <%= f.input  :photo %>
   	<%= f.button :submit, 'Crear nuevo link' %>
 	<% end %>
