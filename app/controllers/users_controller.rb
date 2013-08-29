@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+	def update
+		@user = User.last
+		@user.update_attributes(params[:user])
+		redirect_to admin_path
+	end
+
 	def create
 		@user = User.create(params[:user]) if params[:user]
 		redirect_to admin_path

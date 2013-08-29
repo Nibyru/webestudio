@@ -24,60 +24,68 @@
 		</section>
 
 		<section>
+			<h1>Informacion del Sitio</h1>
+	    	<br>
+		    <%= simple_form_for Content.last || @new_content, html: {multipart: true} do |f| %>
+		      <%= f.input  :person_message %>
+		      <%= image_tag(@content.photo_url(:avatar), class: "circle-glob") if @content.photo? %>
+		  	  <%= f.input  :photo %>
+		      <%= f.input  :person_info %>
+		      <%= f.input  :about_us %>
+		      <%= f.input  :us_message %>
+		      <%= f.input  :direction %>
+		      <%= f.input  :telephone %>
+		      <%= f.input  :email %>
+		      <%= f.input  :facebook %>
+		      <%= f.input  :twitter %>
+		      <%= f.input  :linkedin %>
+		      <%= f.button :submit, 'Guardar Informacion' %>
+		  	<% end %>
+		</section>
+
+		<section>
 			<h1>Servicios</h1>
-			<ul>
 			<% @services.each do |service| %>
-				<li>
-					<%= service.title %> | <%= link_to "borrar", service, method: :delete %> 
-				</li>
-			<% end %>
-			</ul>
-		    <%= simple_form_for @service do |f| %>
-		  	  <%= f.input  :symbol %>
-		      <%= f.input  :title %>
-		      <%= f.input  :header %>
-		      <%= f.input  :body %>
-		      <%= f.button :submit, 'Agregar servicio' %>
+			    <%= simple_form_for service do |f| %>
+			  	  <%= f.input  :symbol %>
+			      <%= f.input  :title %>
+			      <%= f.input  :header %>
+			      <%= f.input  :body %>
+			      <%= f.button :submit, 'Agregar servicio' %> | <%= link_to "borrar", service, method: :delete %>
+				<% end %>
+				<hr>
 		  	<% end %>
 		</section>
 
 		<section>
 			<h1>Nosotros</h1>
 			<p>Integrantes</p>
-			<ul>
 			<% @users.each do |user| %>
-				<li>
-					<%= user.name %> | <%= link_to "borrar", user, method: :delete %>
-			    	<%= image_tag(user.photo_url(:avatar)) if user.photo? %> 
-				</li>
+			    <%= simple_form_for user, html: {multipart: true} do |f| %>
+			  	  <%= f.input  :name %>
+			      <%= f.input  :job %>
+			      <%= f.input  :twitter %>
+			      <%= f.input  :facebook %>
+			      <%= image_tag(user.photo_url(:avatar)) if user.photo? %> 
+			  	  <%= f.input  :photo %>
+			      <%= f.button :submit, 'Agregar nuevo integrante' %> | <%= link_to "borrar", user, method: :delete %>
+			  	<hr>
+			  	<% end %>
 			<% end %>
-			</ul>
-		    <%= simple_form_for @user, html: {multipart: true} do |f| %>
-		  	  <%= f.input  :name %>
-		      <%= f.input  :job %>
-		      <%= f.input  :twitter %>
-		      <%= f.input  :facebook %>
-		  	  <%= f.input  :photo %>
-		      <%= f.button :submit, 'Agregar nuevo integrante' %>
-		  	<% end %>
 		</section>
 
 		<section>
 			<h1>Links</h1>
-			<ul>
 			<% @links.each do |link| %>
-				<li>
-					<%= link.name %> | <%= link_to "borrar", link, method: :delete %>
-			    	<%= image_tag(link.photo_url(:link)) if link.photo? %> 
-				</li>
+			    <%= simple_form_for link, html: {multipart: true} do |f| %>
+			  	  <%= f.input  :name %>
+			      <%= f.input  :url %>
+			      <%= image_tag(link.photo_url(:link)) if link.photo? %> 
+			  	  <%= f.input  :photo %>
+			      <%= f.button :submit, 'Crear nuevo link' %> | <%= link_to "borrar", link, method: :delete %>
+			  	<% end %>
+			  	<hr>
 			<% end %>
-			</ul>
-		    <%= simple_form_for @link, html: {multipart: true} do |f| %>
-		  	  <%= f.input  :name %>
-		      <%= f.input  :url %>
-		  	  <%= f.input  :photo %>
-		      <%= f.button :submit, 'Crear nuevo link' %>
-		  	<% end %>
 		</section>
     </div>
   </div>

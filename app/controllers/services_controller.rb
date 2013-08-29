@@ -1,5 +1,11 @@
 class ServicesController < ApplicationController
 
+	def update
+		@service = Service.last
+		@service.update_attributes(params[:service])
+		redirect_to admin_path
+	end
+
 	def create
 		@service = Service.create(params[:service]) if params[:service]
 		redirect_to admin_path

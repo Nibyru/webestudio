@@ -13,6 +13,7 @@ private
 		@user     = User.new
 		@service  = Service.new
 		@slider   = Slider.new
+		@new_content  = Content.new
 	end
 
 	def data_collector
@@ -20,5 +21,6 @@ private
 		@users    = User.all
 		@services = Service.all
 		@sliders  = Slider.all
+		@content  = Content.last
 	end
 end

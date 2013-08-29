@@ -1,0 +1,20 @@
+.circle-glob{
+	border: 0.5em solid white;
+	border-radius: 50%;
+	width: 182px;
+	height: 182px;
+	position: relative;
+	z-index: 10;
+}
+.triangle-glob{
+	position: absolute;
+	border: 19px solid transparent;
+	border-left: 70px solid white;
+	width: 26px;
+	bottom: -12px;
+	right: 25px;
+	z-index: 0;
+	-webkit-transform: rotate(30deg);
+	-moz-transform:rotate(30deg);
+	-o-transform:rotate(30deg);
+}
