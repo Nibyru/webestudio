@@ -51,10 +51,17 @@
 			      <%= f.input  :title %>
 			      <%= f.input  :header %>
 			      <%= f.input  :body %>
-			      <%= f.button :submit, 'Agregar servicio' %> | <%= link_to "borrar", service, method: :delete %>
+			      <%= f.button :submit, 'Guardar cambios' %> | <%= link_to "Borrar", service, method: :delete %>
 				<% end %>
 				<hr>
 		  	<% end %>
+		    <%= simple_form_for @service do |f| %>
+		  	  <%= f.input  :symbol %>
+		      <%= f.input  :title %>
+		      <%= f.input  :header %>
+		      <%= f.input  :body %>
+		      <%= f.button :submit, 'Agregar servicio' %>
+			<% end %>
 		</section>
 
 		<section>
@@ -68,10 +75,20 @@
 			      <%= f.input  :facebook %>
 			      <%= image_tag(user.photo_url(:avatar)) if user.photo? %> 
 			  	  <%= f.input  :photo %>
-			      <%= f.button :submit, 'Agregar nuevo integrante' %> | <%= link_to "borrar", user, method: :delete %>
+			      <%= f.button :submit, 'Guardar cambios' %> | <%= link_to "Borrar",
+			      	user, method: :delete %>
 			  	<hr>
 			  	<% end %>
 			<% end %>
+		    <%= simple_form_for @user, html: {multipart: true} do |f| %>
+		  	  <%= f.input  :name %>
+		      <%= f.input  :job %>
+		      <%= f.input  :twitter %>
+		      <%= f.input  :facebook %> 
+		  	  <%= f.input  :photo %>
+		      <%= f.button :submit, 'Agregar nuevo integrante' %>
+		  	<hr>
+		  	<% end %>
 		</section>
 
 		<section>
@@ -82,10 +99,17 @@
 			      <%= f.input  :url %>
 			      <%= image_tag(link.photo_url(:link)) if link.photo? %> 
 			  	  <%= f.input  :photo %>
-			      <%= f.button :submit, 'Crear nuevo link' %> | <%= link_to "borrar", link, method: :delete %>
+			      <%= f.button :submit, 'Guardar cambios' %> | <%= link_to "Borrar",
+			      	link, method: :delete %>
 			  	<% end %>
 			  	<hr>
 			<% end %>
+		    <%= simple_form_for @link, html: {multipart: true} do |f| %>
+		  	  <%= f.input  :name %>
+		      <%= f.input  :url %> 
+		  	  <%= f.input  :photo %>
+		      <%= f.button :submit, 'Crear nuevo link' %>
+		  	<% end %>
 		</section>
     </div>
   </div>

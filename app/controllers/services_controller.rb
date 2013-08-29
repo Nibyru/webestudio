@@ -1,7 +1,7 @@
 class ServicesController < ApplicationController
 
 	def update
-		@service = Service.last
+		@service = Service.find(params[:id])
 		@service.update_attributes(params[:service])
 		redirect_to admin_path
 	end

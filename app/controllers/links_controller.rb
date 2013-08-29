@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
 
 	def update
-		@link = Link.last
+		@link = Link.find(params[:id])
 		@link.update_attributes(params[:link])
 		redirect_to admin_path
 	end
