@@ -4,33 +4,23 @@
     ================================================== -->
     <div id="header" class="carousel slide animated fadeIn">
       <div class="carousel-inner">
-        <div class="item one active">
+        <% @sliders.each_with_index do |slider, index| %>
+        <% case index %>
+        <% when 0 %>
+          <div class="item one active" style="background: url(<%= slider.photo_url(:slider) %>)">
+        <% when 1 %>
+          <div class="item two" style="background: url(<%= slider.photo_url(:slider) %>)">
+        <% when 2 %>
+          <div class="item three" style="background: url(<%= slider.photo_url(:slider) %>)">
+        <% end %>
           <div class="container animated fadeInUp">
             <div class="carousel-caption">
-              <h1>Bienvenido a C&C</h1>
-              <p class="lead margin-40"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em></p>
-              <a class="btn-main" href="#"><i class="icon-chevron-right"></i> More</a>
+              <h1><%= slider.title %></h1>
+              <p class="lead margin-40"><em><%= slider.header %></em></p>
             </div>
           </div>
         </div>
-        <div class="item two">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Built With Bootstrap</h1>
-              <p class="lead margin-40"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em></p>
-              <a class="btn-main" href="#"><i class="icon-chevron-right"></i> More</a>
-            </div>
-          </div>
-        </div>
-        <div class="item three">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>100% Responsive</h1>
-              <p class="lead margin-40"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em></p>
-              <a class="btn-main" href="#"><i class="icon-chevron-right"></i> More</a>
-            </div>
-          </div>
-        </div>
+        <% end %>
       </div>
       <a class="left carousel-control hidden-phone" href="#header" data-slide="prev"><i class="icon-angle-left"></i></a>
       <a class="right carousel-control hidden-phone" href="#header" data-slide="next"><i class="icon-angle-right"></i></a>

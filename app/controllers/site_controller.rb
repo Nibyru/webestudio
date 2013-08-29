@@ -12,11 +12,13 @@ private
 		@link     = Link.new
 		@user     = User.new
 		@service  = Service.new
+		@slider   = Slider.new
 	end
 
 	def data_collector
 		@links    = Link.all
 		@users    = User.all
 		@services = Service.all
+		@sliders  = Slider.all
 	end
 end

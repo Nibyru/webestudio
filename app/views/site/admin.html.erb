@@ -1,7 +1,27 @@
-<div class="container" style="margin: 100px auto; background: url(grid_noise.png) repeat;">
+<div class="container" style="margin: 100px auto;">
   <div class="row">
     <div class="span12">
 		<h1>Admin Site</h1>
+
+		<section>
+			<h1>Portada</h1>
+			<ul>
+			<% @sliders.each do |slider| %>
+				<li>
+					<%= slider.title %> | <%= link_to "borrar", slider, method: :delete %>
+			    	<%= image_tag(slider.photo_url(:slider)) if slider.photo? %> 
+				</li>
+			<% end %>
+			</ul>
+			<% if @sliders.size <= 2 %>
+			    <%= simple_form_for @slider, html: {multipart: true} do |f| %>
+			      <%= f.input  :title %>
+			      <%= f.input  :header %>
+			  	  <%= f.input  :photo %>
+			      <%= f.button :submit, 'Agregar noticia' %>
+			  	<% end %>
+		  	<% end %>
+		</section>
 
 		<section>
 			<h1>Servicios</h1>
