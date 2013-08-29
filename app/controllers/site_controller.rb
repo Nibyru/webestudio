@@ -21,6 +21,6 @@ private
 		@users    = User.all
 		@services = Service.all
 		@sliders  = Slider.all
-		@content  = Content.last
+		@content  = Content.last || Content.new
 	end
 end
