@@ -1440,6 +1440,23 @@ p.lead {
 #login{
   margin-top: 120px;
   margin-bottom: 120px;
+  background: #61666A;
+  padding: 20px;
+  border-radius: 10px;
+  label{
+    color: #eee;
+    margin-top: 20px;
+  }
+  #admin_remember_me{
+    margin-top: 25px;
+    width: 15px;
+  }
+  .btn-info{
+    background: $azul;
+  }
+  .checkbox.inline+.checkbox.inline {
+    margin-left: 0px;
+  }
 }
 
 
