@@ -1459,6 +1459,10 @@ p.lead {
   }
 }
 
+#admin{
+  label{color: #E1E6EA;}
+  button{background: $azul}
+}
 
 /* Desktops and laptops ----------- */
 @media (min-width: 980px) and (max-width: 1699px) {
