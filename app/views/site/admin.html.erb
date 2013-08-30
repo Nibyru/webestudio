@@ -27,12 +27,12 @@
 			<h1>Informacion del Sitio</h1>
 	    	<br>
 		    <%= simple_form_for Content.last || @new_content, html: {multipart: true} do |f| %>
-		      <%= f.input  :person_message %>
+		      <%= f.input  :person_message, as: :text %>
 		      <%= image_tag(@content.photo_url(:avatar), class: "circle-glob") if @content.photo? %>
 		  	  <%= f.input  :photo %>
 		      <%= f.input  :person_info %>
-		      <%= f.input  :about_us %>
-		      <%= f.input  :us_message %>
+		      <%= f.input  :about_us, as: :text %>
+		      <%= f.input  :us_message, as: :text %>
 		      <%= f.input  :direction %>
 		      <%= f.input  :telephone %>
 		      <%= f.input  :email %>
@@ -47,19 +47,18 @@
 			<h1>Servicios</h1>
 			<% @services.each do |service| %>
 			    <%= simple_form_for service do |f| %>
-			  	  <%= f.input  :symbol %>
 			      <%= f.input  :title %>
 			      <%= f.input  :header %>
-			      <%= f.input  :body %>
+			      <%= f.input  :body, as: :text, input_html: { class: 'wysihtml5' } %>
 			      <%= f.button :submit, 'Guardar cambios' %> | <%= link_to "Borrar", service, method: :delete %>
 				<% end %>
 				<hr>
 		  	<% end %>
 		    <%= simple_form_for @service do |f| %>
-		  	  <%= f.input  :symbol %>
+		  	  <%= f.hidden_field :symbol, value: 'icon-check' %>
 		      <%= f.input  :title %>
 		      <%= f.input  :header %>
-		      <%= f.input  :body %>
+		      <%= f.input  :body, as: :text, input_html: { class: 'wysihtml5' } %>
 		      <%= f.button :submit, 'Agregar servicio' %>
 			<% end %>
 		</section>

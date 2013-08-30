@@ -103,14 +103,20 @@
     
     <script>
     $(document).ready(function(){
-        $(function(){
-          $('#header').carousel()
+      $(function(){
+        $('#header').carousel()
+      });
+      $(window).load(function() {
+        $('.flexslider').flexslider({
+          animation: "slide"
         });
-        $(window).load(function() {
-          $('.flexslider').flexslider({
-            animation: "slide"
-          });
+      });
+      $('.wysihtml5').each(function(i, elem) {
+        $(elem).wysihtml5({
+          "link": false,
+          "image": false
         });
+      });
     })
     </script>
     

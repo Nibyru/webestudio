@@ -4,7 +4,7 @@
 	<article id="servicio-<%= index %>">
 		<h3><%= service.title %></h3>
 		<p><%= service.header %>
-		<p><%= service.body %>
+		<p><%= service.body.html_safe %>
 	</article>
 	<% end %>
 </section>

@@ -13,6 +13,7 @@
  *= require font-awesome
  *= require animate
  *= require bootstrap.min
+ *= require bootstrap-wysihtml5
  *= require main
  *= require_tree .
  */
