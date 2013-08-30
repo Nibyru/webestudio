@@ -9,19 +9,19 @@
     <div class="nav-collapse collapse">
       <ul class="nav pull-right">
         <li class="">
-          <%= link_to 'Inicio', root_path, class: 'scroll' %>
+          <%= link_to 'Inicio', root_path %>
         </li>
         <li class=<%= 'active' if current_page?(action: 'services')%> >
-          <%= link_to 'Servicios', root_path, anchor: 'services', class: 'scroll' %>
+          <%= link_to 'Servicios', root_path(anchor: 'services') %>
         </li>
         <li class="">
-          <%= link_to 'Nosotros', root_path, anchor: 'content1', class: 'scroll' %>
+          <%= link_to 'Nosotros', root_path(anchor: 'content1') %>
         </li>
         <li class="">
-          <%= link_to 'Links', root_path, anchor: 'links', class: 'scroll' %>
+          <%= link_to 'Links', root_path(anchor: 'content1') %>
         </li>
         <li class="">
-          <%= link_to 'Contacto', root_path, anchor: 'bottom', class: 'scroll' %>
+          <%= link_to 'Contacto', root_path(anchor: 'bottom') %>
         </li>
       </ul>
     </div><!--/.nav-collapse -->
