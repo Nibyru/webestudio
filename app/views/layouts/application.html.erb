@@ -29,10 +29,10 @@
   <body id="top" data-spy="scroll" data-target=".navbar">
 
     <div class="navbar navbar-inverse navbar-fixed-top">
-      <% if current_page?(action: 'index')%>
-        <%= render 'shared/home_nav' %>
-      <% else %>
+      <% if !current_page?(root_path) || current_page?(action: 'new') %>
         <%= render 'shared/external_nav' %>
+      <% else %>
+        <%= render 'shared/home_nav' %>
       <% end %>
     </div>
 
