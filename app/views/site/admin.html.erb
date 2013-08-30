@@ -43,22 +43,22 @@
 		  	<% end %>
 		</section>
 
-		<section>
+		<section style="background:#666; padding:20px;">
 			<h1>Servicios</h1>
 			<% @services.each do |service| %>
 			    <%= simple_form_for service do |f| %>
-			      <%= f.input  :title %>
-			      <%= f.input  :header %>
-			      <%= f.input  :body, as: :text, input_html: { class: 'wysihtml5' } %>
+			      <%= f.input  :title, class: 'input-block-level' %>
+			      <%= f.input  :header, class: 'input-block-level' %>
+			      <%= f.input  :body, as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
 			      <%= f.button :submit, 'Guardar cambios' %> | <%= link_to "Borrar", service, method: :delete %>
 				<% end %>
 				<hr>
 		  	<% end %>
 		    <%= simple_form_for @service do |f| %>
 		  	  <%= f.hidden_field :symbol, value: 'icon-check' %>
-		      <%= f.input  :title %>
-		      <%= f.input  :header %>
-		      <%= f.input  :body, as: :text, input_html: { class: 'wysihtml5' } %>
+		      <%= f.input  :title, class: 'input-block-level' %>
+		      <%= f.input  :header, class: 'input-block-level' %>
+		      <%= f.input  :body, as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
 		      <%= f.button :submit, 'Agregar servicio' %>
 			<% end %>
 		</section>
