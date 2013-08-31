@@ -1,12 +1,12 @@
 <div id="admin">
 	<div class="container" style="margin: 100px auto;">
 	  <div class="row">
-	    <div class="span12">
-			<h1>Admin Site</h1>
+	    <div class="span10 offset1">
+			<h1 class="admin-title">Admin Site</h1>
 
 			<section class="login">
 				<div class="row">
-					<div class="span6 offset3">
+					<div class="span6 offset2">
 						<h1>Portada</h1>
 						<ul>
 						<% @sliders.each do |slider| %>
@@ -30,7 +30,7 @@
 
 			<section class="login">
 				<div class="row">
-					<div class="span6 offset3">
+					<div class="span6 offset2">
 						<h1>Informacion del Sitio</h1>
 				    	<br>
 					    <%= simple_form_for Content.last || @new_content, html: {multipart: true} do |f| %>
@@ -52,72 +52,84 @@
 				</div>
 			</section>
 
-			<section style="background:#666; padding:20px;">
-				<h1>Servicios</h1>
-				<% @services.each do |service| %>
-				    <%= simple_form_for service do |f| %>
-				      <%= f.input  :title, class: 'input-block-level' %>
-				      <%= f.input  :header, class: 'input-block-level' %>
-				      <%= f.input  :body, as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
-				      <%= f.button :submit, 'Guardar cambios' %> | <%= link_to "Borrar", service, method: :delete %>
-					<% end %>
-					<hr>
-			  	<% end %>
-			    <%= simple_form_for @service do |f| %>
-			  	  <%= f.hidden_field :symbol, value: 'icon-check' %>
-			      <%= f.input  :title, class: 'input-block-level' %>
-			      <%= f.input  :header, class: 'input-block-level' %>
-			      <%= f.input  :body, as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
-			      <%= f.button :submit, 'Agregar servicio' %>
-				<% end %>
+			<section class="login">
+				<div class="row">
+					<div class="span6 offset2">
+						<h1>Servicios</h1>
+						<% @services.each do |service| %>
+						    <%= simple_form_for service do |f| %>
+						      <%= f.input  :title, class: 'input-block-level' %>
+						      <%= f.input  :header, class: 'input-block-level' %>
+						      <%= f.input  :body, as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
+						      <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", service, method: :delete %>
+							<% end %>
+							<hr>
+					  	<% end %>
+					    <%= simple_form_for @service do |f| %>
+					  	  <%= f.hidden_field :symbol, value: 'icon-check' %>
+					      <%= f.input  :title, class: 'input-block-level' %>
+					      <%= f.input  :header, class: 'input-block-level' %>
+					      <%= f.input  :body, as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
+					      <%= f.button :submit, 'Agregar servicio', class: "btn btn-info" %>
+						<% end %>
+					</div>
+				</div>
 			</section>
 
-			<section>
-				<h1>Nosotros</h1>
-				<p>Integrantes</p>
-				<% @users.each do |user| %>
-				    <%= simple_form_for user, html: {multipart: true} do |f| %>
-				  	  <%= f.input  :name %>
-				      <%= f.input  :job %>
-				      <%= f.input  :twitter %>
-				      <%= f.input  :facebook %>
-				      <%= image_tag(user.photo_url(:avatar)) if user.photo? %> 
-				  	  <%= f.input  :photo %>
-				      <%= f.button :submit, 'Guardar cambios' %> | <%= link_to "Borrar",
-				      	user, method: :delete %>
-				  	<hr>
-				  	<% end %>
-				<% end %>
-			    <%= simple_form_for @user, html: {multipart: true} do |f| %>
-			  	  <%= f.input  :name %>
-			      <%= f.input  :job %>
-			      <%= f.input  :twitter %>
-			      <%= f.input  :facebook %> 
-			  	  <%= f.input  :photo %>
-			      <%= f.button :submit, 'Agregar nuevo integrante' %>
-			  	<hr>
-			  	<% end %>
+			<section class="login">
+				<div class="row">
+					<div class="span6 offset2">
+						<h1>Nosotros</h1>
+						<p>Integrantes</p>
+						<% @users.each do |user| %>
+						    <%= simple_form_for user, html: {multipart: true} do |f| %>
+						  	  <%= f.input  :name %>
+						      <%= f.input  :job %>
+						      <%= f.input  :twitter %>
+						      <%= f.input  :facebook %>
+						      <%= image_tag(user.photo_url(:avatar)) if user.photo? %> 
+						  	  <%= f.input  :photo %>
+						      <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar",
+						      	user, method: :delete %>
+						  	<hr>
+						  	<% end %>
+						<% end %>
+					    <%= simple_form_for @user, html: {multipart: true} do |f| %>
+					  	  <%= f.input  :name %>
+					      <%= f.input  :job %>
+					      <%= f.input  :twitter %>
+					      <%= f.input  :facebook %> 
+					  	  <%= f.input  :photo %>
+					      <%= f.button :submit, 'Agregar nuevo integrante', class: "btn btn-info" %>
+					  	<hr>
+					  	<% end %>
+					</div>
+				</div>
 			</section>
 
-			<section>
-				<h1>Links</h1>
-				<% @links.each do |link| %>
-				    <%= simple_form_for link, html: {multipart: true} do |f| %>
-				  	  <%= f.input  :name %>
-				      <%= f.input  :url %>
-				      <%= image_tag(link.photo_url(:link)) if link.photo? %> 
-				  	  <%= f.input  :photo %>
-				      <%= f.button :submit, 'Guardar cambios' %> | <%= link_to "Borrar",
-				      	link, method: :delete %>
-				  	<% end %>
-				  	<hr>
-				<% end %>
-			    <%= simple_form_for @link, html: {multipart: true} do |f| %>
-			  	  <%= f.input  :name %>
-			      <%= f.input  :url %> 
-			  	  <%= f.input  :photo %>
-			      <%= f.button :submit, 'Crear nuevo link' %>
-			  	<% end %>
+			<section class="login">
+				<div class="row">
+					<div class="span6 offset2">
+						<h1>Links</h1>
+						<% @links.each do |link| %>
+						    <%= simple_form_for link, html: {multipart: true} do |f| %>
+						  	  <%= f.input  :name %>
+						      <%= f.input  :url %>
+						      <%= image_tag(link.photo_url(:link)) if link.photo? %> 
+						  	  <%= f.input  :photo %>
+						      <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar",
+						      	link, method: :delete %>
+						  	<% end %>
+						  	<hr>
+						<% end %>
+					    <%= simple_form_for @link, html: {multipart: true} do |f| %>
+					  	  <%= f.input  :name %>
+					      <%= f.input  :url %> 
+					  	  <%= f.input  :photo %>
+					      <%= f.button :submit, 'Crear nuevo link', class: "btn btn-info" %>
+					  	<% end %>
+					</div>
+				</div>
 			</section>
 	    </div>
 	  </div>
