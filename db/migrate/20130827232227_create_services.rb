@@ -3,8 +3,8 @@ class CreateServices < ActiveRecord::Migration
     create_table :services do |t|
       t.string	:symbol
       t.string	:title
-      t.string	:header
-      t.string	:body
+      t.text	:header
+      t.text	:body
 
       t.timestamps
     end

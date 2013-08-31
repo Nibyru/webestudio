@@ -3,7 +3,7 @@ class CreateSliders < ActiveRecord::Migration
 	  create_table :sliders do |t|
 	    t.string	:title
 	    t.string	:header
-      	t.string	:photo
+       t.string	:photo
 
 	    t.timestamps
 	  end

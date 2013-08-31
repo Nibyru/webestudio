@@ -1437,7 +1437,7 @@ p.lead {
 }
 
 
-#login{
+.login{
   margin-top: 120px;
   margin-bottom: 120px;
   background: #61666A;
@@ -1447,6 +1447,7 @@ p.lead {
     color: #eee;
     margin-top: 20px;
   }
+  input[type="text"],textarea{width: 100%;}
   #admin_remember_me{
     margin-top: 25px;
     width: 15px;
@@ -1456,6 +1457,9 @@ p.lead {
   }
   .checkbox.inline+.checkbox.inline {
     margin-left: 0px;
+  }
+  .button{
+    background: $azul;
   }
 }
 
