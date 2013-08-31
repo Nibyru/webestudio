@@ -1,12 +1,12 @@
 <div id="admin">
 	<div class="container" style="margin: 100px auto;">
 	  <div class="row">
-	    <div class="span12">
-			<h1>Admin Site</h1>
+	    <div class="span10 offset1">
+			<h1 class="admin-title">Admin Site</h1>
 
 			<section class="login">
 				<div class="row">
-					<div class="span6 offset3">
+					<div class="span6 offset2">
 						<h1>Portada</h1>
 						<ul>
 						<% @sliders.each do |slider| %>
@@ -18,9 +18,9 @@
 						</ul>
 						<% if @sliders.size <= 2 %>
 						    <%= simple_form_for @slider, html: {multipart: true} do |f| %>
-						      <%= f.input  :title %>
-						      <%= f.input  :header %>
-						      <%= f.input  :photo, class: "btn btn-info" %>
+						      <%= f.input  :title, label: 'Titulo' %>
+						      <%= f.input  :header, label: 'Cabecera' %>
+						      <%= f.input  :photo, label: 'Imagen', class: "btn btn-info" %>
 						      <%= f.button :submit, 'Agregar noticia', class: "btn btn-info" %>
 						    <% end %>
 					  	<% end %>
@@ -30,18 +30,18 @@
 
 			<section class="login">
 				<div class="row">
-					<div class="span6 offset3">
+					<div class="span6 offset2">
 						<h1>Informacion del Sitio</h1>
 				    	<br>
 					    <%= simple_form_for Content.last || @new_content, html: {multipart: true} do |f| %>
-					      <%= f.input  :person_message, as: :text %>
+					      <%= f.input  :person_message, label: 'Mensaje Personal' %>
 					      <%= image_tag(@content.photo_url(:avatar), class: "circle-glob") if @content.photo? %>
-					  	  <%= f.input  :photo %>
-					      <%= f.input  :person_info %>
-					      <%= f.input  :about_us, as: :text %>
-					      <%= f.input  :us_message, as: :text %>
-					      <%= f.input  :direction %>
-					      <%= f.input  :telephone %>
+					      <%= f.input  :photo, label: 'Foto' %>
+					      <%= f.input  :person_info, label: 'Nombre' %>
+					      <%= f.input  :about_us, as: :text, input_html: { class: 'wysihtml5' }, label: 'Acerca de Nosotros' %>
+					      <%= f.input  :us_message, label: 'Nuestro mensaje' %>
+					      <%= f.input  :direction, label: 'Direccion' %>
+					      <%= f.input  :telephone, label: 'Telefono' %>
 					      <%= f.input  :email %>
 					      <%= f.input  :facebook %>
 					      <%= f.input  :twitter %>
@@ -52,72 +52,83 @@
 				</div>
 			</section>
 
-			<section style="background:#666; padding:20px;">
-				<h1>Servicios</h1>
-				<% @services.each do |service| %>
-				    <%= simple_form_for service do |f| %>
-				      <%= f.input  :title, class: 'input-block-level' %>
-				      <%= f.input  :header, class: 'input-block-level' %>
-				      <%= f.input  :body, as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
-				      <%= f.button :submit, 'Guardar cambios' %> | <%= link_to "Borrar", service, method: :delete %>
-					<% end %>
-					<hr>
-			  	<% end %>
-			    <%= simple_form_for @service do |f| %>
-			  	  <%= f.hidden_field :symbol, value: 'icon-check' %>
-			      <%= f.input  :title, class: 'input-block-level' %>
-			      <%= f.input  :header, class: 'input-block-level' %>
-			      <%= f.input  :body, as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
-			      <%= f.button :submit, 'Agregar servicio' %>
-				<% end %>
+			<section class="login">
+				<div class="row">
+					<div class="span6 offset2">
+						<h1>Servicios</h1>
+						<% @services.each do |service| %>
+						    <%= simple_form_for service do |f| %>
+						      <%= f.input  :title, label: 'Titulo', class: 'input-block-level' %>
+						      <%= f.input  :header, label: 'Introduccion', class: 'input-block-level' %>
+						      <%= f.input  :body, label: 'Contenido', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
+						      <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", service, method: :delete %>
+							<% end %>
+							<hr>
+					  	<% end %>
+					    <%= simple_form_for @service do |f| %>
+					      <%= f.hidden_field :symbol, value: 'icon-check' %>
+					      <%= f.input  :title, label: 'Titulo', class: 'input-block-level' %>
+					      <%= f.input  :header, label: 'Introduccion', class: 'input-block-level' %>
+					      <%= f.input  :body, label: 'Contenido', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
+					      <%= f.button :submit, 'Agregar servicio', class: "btn btn-info" %>
+						<% end %>
+					</div>
+				</div>
 			</section>
 
-			<section>
-				<h1>Nosotros</h1>
-				<p>Integrantes</p>
-				<% @users.each do |user| %>
-				    <%= simple_form_for user, html: {multipart: true} do |f| %>
-				  	  <%= f.input  :name %>
-				      <%= f.input  :job %>
-				      <%= f.input  :twitter %>
-				      <%= f.input  :facebook %>
-				      <%= image_tag(user.photo_url(:avatar)) if user.photo? %> 
-				  	  <%= f.input  :photo %>
-				      <%= f.button :submit, 'Guardar cambios' %> | <%= link_to "Borrar",
-				      	user, method: :delete %>
-				  	<hr>
-				  	<% end %>
-				<% end %>
-			    <%= simple_form_for @user, html: {multipart: true} do |f| %>
-			  	  <%= f.input  :name %>
-			      <%= f.input  :job %>
-			      <%= f.input  :twitter %>
-			      <%= f.input  :facebook %> 
-			  	  <%= f.input  :photo %>
-			      <%= f.button :submit, 'Agregar nuevo integrante' %>
-			  	<hr>
-			  	<% end %>
+			<section class="login">
+				<div class="row">
+					<div class="span6 offset2">
+						<h1>Nosotros</h1>
+						<p>Integrantes</p>
+						<% @users.each do |user| %>
+						    <%= simple_form_for user, html: {multipart: true} do |f| %>
+						      <%= f.input  :name, label: 'Nombre' %>
+						      <%= f.input  :job, label: 'Informacion' %>
+						      <%= f.input  :twitter %>
+						      <%= f.input  :facebook %>
+						      <%= image_tag(user.photo_url(:avatar)) if user.photo? %> 
+						      <%= f.input  :photo, label: 'Foto' %>
+						      <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar",
+						      	user, method: :delete %>
+						  	<hr>
+						  	<% end %>
+						<% end %>
+					    <%= simple_form_for @user, html: {multipart: true} do |f| %>
+					      <%= f.input  :name, label: 'Nombre' %>
+					      <%= f.input  :job, label: 'Informacion' %>
+					      <%= f.input  :twitter %>
+					      <%= f.input  :facebook %> 
+					      <%= f.input  :photo, label: 'Foto' %>
+					      <%= f.button :submit, 'Agregar nuevo integrante', class: "btn btn-info" %>
+					  	<hr>
+					  	<% end %>
+					</div>
+				</div>
 			</section>
 
-			<section>
-				<h1>Links</h1>
-				<% @links.each do |link| %>
-				    <%= simple_form_for link, html: {multipart: true} do |f| %>
-				  	  <%= f.input  :name %>
-				      <%= f.input  :url %>
-				      <%= image_tag(link.photo_url(:link)) if link.photo? %> 
-				  	  <%= f.input  :photo %>
-				      <%= f.button :submit, 'Guardar cambios' %> | <%= link_to "Borrar",
-				      	link, method: :delete %>
-				  	<% end %>
-				  	<hr>
-				<% end %>
-			    <%= simple_form_for @link, html: {multipart: true} do |f| %>
-			  	  <%= f.input  :name %>
-			      <%= f.input  :url %> 
-			  	  <%= f.input  :photo %>
-			      <%= f.button :submit, 'Crear nuevo link' %>
-			  	<% end %>
+			<section class="login">
+				<div class="row">
+					<div class="span6 offset2">
+						<h1>Links</h1>
+						<% @links.each do |link| %>
+						    <%= simple_form_for link, html: {multipart: true} do |f| %>
+						      <%= f.input  :name, label: 'Nombre' %>
+						      <%= f.input  :url %>
+						      <%= image_tag(link.photo_url(:link)) if link.photo? %> 
+						      <%= f.input  :photo, label: 'Imagen' %>
+						      <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", link, method: :delete %>
+						  	<% end %>
+						  	<hr>
+						<% end %>
+					    <%= simple_form_for @link, html: {multipart: true} do |f| %>
+					      <%= f.input  :name, label: 'Titulo' %>
+					      <%= f.input  :url %> 
+					      <%= f.input  :photo, label: 'Imagen' %>
+					      <%= f.button :submit, 'Crear nuevo link', class: "btn btn-info" %>
+					  	<% end %>
+					</div>
+				</div>
 			</section>
 	    </div>
 	  </div>
