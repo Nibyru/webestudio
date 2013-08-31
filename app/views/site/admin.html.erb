@@ -4,46 +4,52 @@
 	    <div class="span12">
 			<h1>Admin Site</h1>
 
-			<section>
-				<div class="span8 offset2" style="background:#91969A; padding:20px;">
-					<h1>Portada</h1>
-					<ul>
-					<% @sliders.each do |slider| %>
-						<li>
-							<%= slider.title %> | <%= link_to "borrar", slider, method: :delete %>
-					    	<%= image_tag(slider.photo_url(:slider)) if slider.photo? %> 
-						</li>
-					<% end %>
-					</ul>
-					<% if @sliders.size <= 2 %>
-					    <%= simple_form_for @slider, html: {multipart: true} do |f| %>
-					      <%= f.input  :title %>
-					      <%= f.input  :header %>
-					  	  <%= f.input  :photo %>
-					      <%= f.button :submit, 'Agregar noticia' %>
+			<section class="login">
+				<div class="row">
+					<div class="span6 offset3">
+						<h1>Portada</h1>
+						<ul>
+						<% @sliders.each do |slider| %>
+							<li>
+								<%= slider.title %> | <%= link_to "borrar", slider, method: :delete %>
+						    	<%= image_tag(slider.photo_url(:slider)) if slider.photo? %> 
+							</li>
+						<% end %>
+						</ul>
+						<% if @sliders.size <= 2 %>
+						    <%= simple_form_for @slider, html: {multipart: true} do |f| %>
+						      <%= f.input  :title %>
+						      <%= f.input  :header %>
+						      <%= f.input  :photo, class: "btn btn-info" %>
+						      <%= f.button :submit, 'Agregar noticia', class: "btn btn-info" %>
+						    <% end %>
 					  	<% end %>
-				  	<% end %>
+					</div>
 				</div>
 			</section>
 
-			<section>
-				<h1>Informacion del Sitio</h1>
-		    	<br>
-			    <%= simple_form_for Content.last || @new_content, html: {multipart: true} do |f| %>
-			      <%= f.input  :person_message, as: :text %>
-			      <%= image_tag(@content.photo_url(:avatar), class: "circle-glob") if @content.photo? %>
-			  	  <%= f.input  :photo %>
-			      <%= f.input  :person_info %>
-			      <%= f.input  :about_us, as: :text %>
-			      <%= f.input  :us_message, as: :text %>
-			      <%= f.input  :direction %>
-			      <%= f.input  :telephone %>
-			      <%= f.input  :email %>
-			      <%= f.input  :facebook %>
-			      <%= f.input  :twitter %>
-			      <%= f.input  :linkedin %>
-			      <%= f.button :submit, 'Guardar Informacion' %>
-			  	<% end %>
+			<section class="login">
+				<div class="row">
+					<div class="span6 offset3">
+						<h1>Informacion del Sitio</h1>
+				    	<br>
+					    <%= simple_form_for Content.last || @new_content, html: {multipart: true} do |f| %>
+					      <%= f.input  :person_message, as: :text %>
+					      <%= image_tag(@content.photo_url(:avatar), class: "circle-glob") if @content.photo? %>
+					  	  <%= f.input  :photo %>
+					      <%= f.input  :person_info %>
+					      <%= f.input  :about_us, as: :text %>
+					      <%= f.input  :us_message, as: :text %>
+					      <%= f.input  :direction %>
+					      <%= f.input  :telephone %>
+					      <%= f.input  :email %>
+					      <%= f.input  :facebook %>
+					      <%= f.input  :twitter %>
+					      <%= f.input  :linkedin %>
+					      <%= f.button :submit, 'Guardar Informacion', class: "btn btn-info" %>
+					  	<% end %>
+					</div>
+				</div>
 			</section>
 
 			<section style="background:#666; padding:20px;">
