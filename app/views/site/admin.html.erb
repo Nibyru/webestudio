@@ -96,7 +96,7 @@
 						<% end %>
 					    <%= simple_form_for @user, html: {multipart: true} do |f| %>
 					      <%= f.input  :name, label: 'Nombre' %>
-					      <%= f.input  :job, label: 'Informacion' %>
+					      <%= f.input  :job, label: 'Informacion', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
 					      <%= f.input  :twitter %>
 					      <%= f.input  :facebook %> 
 					      <%= f.input  :photo, label: 'Foto' %>

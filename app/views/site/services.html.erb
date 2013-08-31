@@ -1,10 +1,9 @@
 <section id="services">
    <div class="container">
      <div class="row">
-      	<h2>Servicios</h2>
       	<% @services.each_with_index do |service, index| %>
       	<article id="servicio-<%= index %>">
-      		<h3><%= service.title %></h3>
+      		<h3><%= service.title %></h3><i class="icon-check icon-2x"></i>
       		<p><%= service.header %>
       		<p><%= service.body.html_safe %>
       	</article>

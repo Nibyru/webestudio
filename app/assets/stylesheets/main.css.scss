@@ -418,6 +418,7 @@ a:hover {
 
 .carousel {
   margin-bottom: 0px;
+  margin-top: 90px;
   background: #31363a;
 }
 
@@ -718,7 +719,7 @@ a:hover {
 .team-info {
   background: $azul;
   padding: 0px 10px;
-  height: 60px;
+  height: 100px;
 }
 
 .team-info h4, .team-info h4 em {
@@ -1250,6 +1251,10 @@ ul.social-icons li a:hover {
   text-decoration: none;
 }
 
+#footer p a:hover{
+  color: $azul;
+}
+
 #map > iframe {
 background-color: rgba(0, 0, 0, 0);
 border: medium none;
@@ -1464,6 +1469,16 @@ h1.admin-title {
   .button{background: $azul;}
   h1{font-size: 45px;}
   .offset2{margin-left:200px}
+  li,a{
+    color: #E1E6EA;
+    font-size: 17px;
+    margin: 15px 0;
+    list-style: none;
+  }
+  a{
+    background: $azul;
+    padding: 2px;
+  }
 }
 
 

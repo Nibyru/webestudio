@@ -13,16 +13,30 @@ $azul:#3973A0;
 		padding: 2em 0;
 		border-bottom: 2px dashed #ddd;
 		h3{
+			display: inline-block;
 			color:$azul;
 			font-weight: 400;
 			font-size: 30px;
+		}
+		p{
+			color: #21262A;
+			font-size: 19px;
+			line-height: 24px;
+			font-weight: 300;
+			font-family: 'Open Sans', sans-serif;
+		}
+		i{
+			display: inline-block;
+			margin-left: 12px;
+			margin-top: -10px;
+			color: $azul;
 		}
 		li{
 			font-family: 'Open Sans', sans-serif;
 			font-size: 18px;
 			line-height: 26px;
 			font-weight: 300;
-			color: #333;
+			color: #21262A;
 			margin:1em 0;
 			list-style-type: circle;
 		}
