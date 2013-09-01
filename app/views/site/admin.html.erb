@@ -11,7 +11,7 @@
 						<ul>
 						<% @sliders.each do |slider| %>
 							<li>
-								<%= slider.title %> | <%= link_to "borrar", slider, method: :delete %>
+								<%= slider.title %> | <%= link_to "borrar", slider, method: :delete, class: "borrar" %>
 						    	<%= image_tag(slider.photo_url(:slider)) if slider.photo? %> 
 							</li>
 						<% end %>
@@ -61,7 +61,7 @@
 						      <%= f.input  :title, label: 'Titulo', class: 'input-block-level' %>
 						      <%= f.input  :header, label: 'Introduccion', class: 'input-block-level' %>
 						      <%= f.input  :body, label: 'Contenido', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
-						      <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", service, method: :delete %>
+						      <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", service, method: :delete, class: "borrar" %>
 							<% end %>
 							<hr>
 					  	<% end %>
@@ -90,7 +90,7 @@
 						      <%= image_tag(user.photo_url(:avatar)) if user.photo? %> 
 						      <%= f.input  :photo, label: 'Foto' %>
 						      <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar",
-						      	user, method: :delete %>
+						      	user, method: :delete, class: "borrar" %>
 						  	<hr>
 						  	<% end %>
 						<% end %>
@@ -117,7 +117,7 @@
 						      <%= f.input  :url %>
 						      <%= image_tag(link.photo_url(:link)) if link.photo? %> 
 						      <%= f.input  :photo, label: 'Imagen' %>
-						      <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", link, method: :delete %>
+						      <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", link, method: :delete, class: "borrar" %>
 						  	<% end %>
 						  	<hr>
 						<% end %>

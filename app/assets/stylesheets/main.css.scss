@@ -1464,19 +1464,28 @@ h1.admin-title {
   .btn-info{
     margin-top: 10px;
     background: $azul;
+    display: inline-block;
   }
   .checkbox.inline+.checkbox.inline {margin-left: 0px;}
   .button{background: $azul;}
   h1{font-size: 45px;}
   .offset2{margin-left:200px}
-  li,a{
+  li{
     color: #E1E6EA;
     font-size: 17px;
-    margin: 15px 0;
     list-style: none;
+    margin-top: 15px;
   }
   a{
+    color: #E1E6EA;
     background: $azul;
+    font-size: 17px;
+    margin-top: 15px;
+  }
+  a.borrar{
+    background: transparent;
+    font-weight: bold;
+    text-decoration: underline;
     padding: 2px;
   }
 }
