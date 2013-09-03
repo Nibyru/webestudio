@@ -1,26 +1,32 @@
 <div class="row">
-   <div class="span6">
-       <%= simple_form_for @user, html: {multipart: true} do |f| %>
+   <div class="span6 login">
+      <h2>Nuevo Integrante</h2>
+       <%= simple_form_for @user, html: {multipart: true}, defaults: { input_html: { class: 'input-block-level' } } do |f| %>
          <%= f.input  :name, label: 'Nombre' %>
          <%= f.input  :job, label: 'Informacion', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
          <%= f.input  :twitter %>
          <%= f.input  :facebook %> 
          <%= f.input  :photo, label: 'Foto' %>
+         <br>
          <%= f.button :submit, 'Agregar nuevo integrante', class: "btn btn-info" %>
       <% end %>
    </div>
    <div class="span5">
+      <h3>Lista de Integrantes</h3><br>
       <% @users.each do |user| %>
-          <%= simple_form_for user, html: {multipart: true} do |f| %>
+          <%= simple_form_for user, html: {multipart: true}, defaults: { input_html: { class: 'input-block-level' } } do |f| %>
             <%= f.input  :name, label: 'Nombre' %>
             <%= f.input  :job, label: 'Informacion' %>
             <%= f.input  :twitter %>
             <%= f.input  :facebook %>
             <%= image_tag(user.photo_url(:avatar)) if user.photo? %> 
             <%= f.input  :photo, label: 'Foto' %>
-            <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar",
-               user, method: :delete, class: "borrar" %>
-         <hr>
+            <br>
+            <div class="btn-group">
+               <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %>
+               <%= link_to "Borrar", user, method: :delete, class: "btn btn-danger", confirm: "¿Esta seguro?" %>
+            </div>
+         <hr><br>
          <% end %>
       <% end %>
    </div>
