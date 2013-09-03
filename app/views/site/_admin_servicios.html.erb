@@ -1,0 +1,23 @@
+<section class="login">
+   <div class="row">
+      <div class="span6 offset2">
+         <h1>Servicios</h1>
+         <% @services.each do |service| %>
+             <%= simple_form_for service do |f| %>
+               <%= f.input  :title, label: 'Titulo', class: 'input-block-level' %>
+               <%= f.input  :header, label: 'Introduccion', class: 'input-block-level' %>
+               <%= f.input  :body, label: 'Contenido', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
+               <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", service, method: :delete, class: "borrar" %>
+            <% end %>
+            <hr>
+         <% end %>
+          <%= simple_form_for @service do |f| %>
+            <%= f.hidden_field :symbol, value: 'icon-check' %>
+            <%= f.input  :title, label: 'Titulo', class: 'input-block-level' %>
+            <%= f.input  :header, label: 'Introduccion', class: 'input-block-level' %>
+            <%= f.input  :body, label: 'Contenido', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
+            <%= f.button :submit, 'Agregar servicio', class: "btn btn-info" %>
+         <% end %>
+      </div>
+   </div>
+</section>

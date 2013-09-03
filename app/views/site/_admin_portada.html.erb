@@ -1,0 +1,23 @@
+<section class="login">
+   <div class="row">
+      <div class="span6 offset2">
+         <h1>Portada</h1>
+         <ul>
+         <% @sliders.each do |slider| %>
+            <li>
+               <%= slider.title %> | <%= link_to "borrar", slider, method: :delete, class: "borrar" %>
+               <%= image_tag(slider.photo_url(:slider)) if slider.photo? %> 
+            </li>
+         <% end %>
+         </ul>
+         <% if @sliders.size <= 2 %>
+             <%= simple_form_for @slider, html: {multipart: true} do |f| %>
+               <%= f.input  :title, label: 'Titulo' %>
+               <%= f.input  :header, label: 'Cabecera' %>
+               <%= f.input  :photo, label: 'Imagen', class: "btn btn-info" %>
+               <%= f.button :submit, 'Agregar noticia', class: "btn btn-info" %>
+             <% end %>
+         <% end %>
+      </div>
+   </div>
+</section>

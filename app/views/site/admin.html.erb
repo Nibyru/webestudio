@@ -1,162 +1,38 @@
-
 <div id="admin">
 	<div class="container" style="margin: 100px auto;">
 	  <div class="row">
-	    <div class="span10 offset1">
+	    <div class="span12">
 			<h1 class="admin-title">Admin Site</h1>
-
-            <ul id="myTab" class="nav nav-tabs">
-              <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-              <li><a href="#profile" data-toggle="tab">Profile</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#dropdown1" data-toggle="tab">@fat</a></li>
-                  <li><a href="#dropdown2" data-toggle="tab">@mdo</a></li>
-                </ul>
-              </li>
-            </ul>
-            <div id="myTabContent" class="tab-content">
-              <div class="tab-pane fade in active" id="home">
-                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-              </div>
-              <div class="tab-pane fade" id="profile">
-                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-              </div>
-              <div class="tab-pane fade" id="dropdown1">
-                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-              </div>
-              <div class="tab-pane fade" id="dropdown2">
-                <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
-              </div>
-            </div>
-
-			<section class="login">
-				<div class="row">
-					<div class="span6 offset2">
-						<h1>Portada</h1>
-						<ul>
-						<% @sliders.each do |slider| %>
-							<li>
-								<%= slider.title %> | <%= link_to "borrar", slider, method: :delete, class: "borrar" %>
-						    	<%= image_tag(slider.photo_url(:slider)) if slider.photo? %> 
-							</li>
-						<% end %>
-						</ul>
-						<% if @sliders.size <= 2 %>
-						    <%= simple_form_for @slider, html: {multipart: true} do |f| %>
-						      <%= f.input  :title, label: 'Titulo' %>
-						      <%= f.input  :header, label: 'Cabecera' %>
-						      <%= f.input  :photo, label: 'Imagen', class: "btn btn-info" %>
-						      <%= f.button :submit, 'Agregar noticia', class: "btn btn-info" %>
-						    <% end %>
-					  	<% end %>
-					</div>
-				</div>
-			</section>
-
-			<section class="login">
-				<div class="row">
-					<div class="span6 offset2">
-						<h1>Informacion del Sitio</h1>
-				    	<br>
-					    <%= simple_form_for Content.last || @new_content, html: {multipart: true} do |f| %>
-					      <%= f.input  :person_message, label: 'Mensaje Personal' %>
-					      <%= image_tag(@content.photo_url(:avatar), class: "circle-glob") if @content.photo? %>
-					      <%= f.input  :photo, label: 'Foto' %>
-					      <%= f.input  :person_info, label: 'Nombre' %>
-					      <%= f.input  :about_us, as: :text, input_html: { class: 'wysihtml5' }, label: 'Acerca de Nosotros' %>
-					      <%= f.input  :us_message, label: 'Nuestro mensaje' %>
-					      <%= f.input  :direction, label: 'Direccion' %>
-					      <%= f.input  :telephone, label: 'Telefono' %>
-					      <%= f.input  :email %>
-					      <%= f.input  :facebook %>
-					      <%= f.input  :twitter %>
-					      <%= f.input  :linkedin %>
-					      <%= f.button :submit, 'Guardar Informacion', class: "btn btn-info" %>
-					  	<% end %>
-					</div>
-				</div>
-			</section>
-
-			<section class="login">
-				<div class="row">
-					<div class="span6 offset2">
-						<h1>Servicios</h1>
-						<% @services.each do |service| %>
-						    <%= simple_form_for service do |f| %>
-						      <%= f.input  :title, label: 'Titulo', class: 'input-block-level' %>
-						      <%= f.input  :header, label: 'Introduccion', class: 'input-block-level' %>
-						      <%= f.input  :body, label: 'Contenido', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
-						      <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", service, method: :delete, class: "borrar" %>
-							<% end %>
-							<hr>
-					  	<% end %>
-					    <%= simple_form_for @service do |f| %>
-					      <%= f.hidden_field :symbol, value: 'icon-check' %>
-					      <%= f.input  :title, label: 'Titulo', class: 'input-block-level' %>
-					      <%= f.input  :header, label: 'Introduccion', class: 'input-block-level' %>
-					      <%= f.input  :body, label: 'Contenido', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
-					      <%= f.button :submit, 'Agregar servicio', class: "btn btn-info" %>
-						<% end %>
-					</div>
-				</div>
-			</section>
-
-			<section class="login">
-				<div class="row">
-					<div class="span6 offset2">
-						<h1>Nosotros</h1>
-						<p>Integrantes</p>
-						<% @users.each do |user| %>
-						    <%= simple_form_for user, html: {multipart: true} do |f| %>
-						      <%= f.input  :name, label: 'Nombre' %>
-						      <%= f.input  :job, label: 'Informacion' %>
-						      <%= f.input  :twitter %>
-						      <%= f.input  :facebook %>
-						      <%= image_tag(user.photo_url(:avatar)) if user.photo? %> 
-						      <%= f.input  :photo, label: 'Foto' %>
-						      <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar",
-						      	user, method: :delete, class: "borrar" %>
-						  	<hr>
-						  	<% end %>
-						<% end %>
-					    <%= simple_form_for @user, html: {multipart: true} do |f| %>
-					      <%= f.input  :name, label: 'Nombre' %>
-					      <%= f.input  :job, label: 'Informacion', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
-					      <%= f.input  :twitter %>
-					      <%= f.input  :facebook %> 
-					      <%= f.input  :photo, label: 'Foto' %>
-					      <%= f.button :submit, 'Agregar nuevo integrante', class: "btn btn-info" %>
-					  	<hr>
-					  	<% end %>
-					</div>
-				</div>
-			</section>
-
-			<section class="login">
-				<div class="row">
-					<div class="span6 offset2">
-						<h1>Links</h1>
-						<% @links.each do |link| %>
-						    <%= simple_form_for link, html: {multipart: true} do |f| %>
-						      <%= f.input  :name, label: 'Nombre' %>
-						      <%= f.input  :url %>
-						      <%= image_tag(link.photo_url(:link)) if link.photo? %> 
-						      <%= f.input  :photo, label: 'Imagen' %>
-						      <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", link, method: :delete, class: "borrar" %>
-						  	<% end %>
-						  	<hr>
-						<% end %>
-					    <%= simple_form_for @link, html: {multipart: true} do |f| %>
-					      <%= f.input  :name, label: 'Titulo' %>
-					      <%= f.input  :url %> 
-					      <%= f.input  :photo, label: 'Imagen' %>
-					      <%= f.button :submit, 'Crear nuevo link', class: "btn btn-info" %>
-					  	<% end %>
-					</div>
-				</div>
-			</section>
+			<br>
+         <ul id="myTab" class="nav nav-tabs">
+           <li class="active">
+             <a href="#panel-portada" data-toggle="tab">Portada</a></li>
+           <li>
+             <a href="#panel-info" data-toggle="tab">Informacion General</a></li>
+           <li>
+             <a href="#panel-servicios" data-toggle="tab">Servicios</a></li>
+           <li>
+             <a href="#panel-nosotros" data-toggle="tab">Nosotros</a></li>
+           <li>
+             <a href="#panel-links" data-toggle="tab">Links</a></li>
+         </ul>
+         <div id="myTabContent" class="tab-content">
+           <div class="tab-pane fade in active" id="panel-portada">
+             <%= render 'site/admin_portada' %>
+           </div>
+           <div class="tab-pane fade" id="panel-info">
+             <%= render 'site/admin_info' %>
+           </div>
+           <div class="tab-pane fade" id="panel-servicios">
+             <%= render 'site/admin_servicios' %>
+           </div>
+           <div class="tab-pane fade login" id="panel-nosotros">
+             <%= render 'site/admin_nosotros' %>
+           </div>
+           <div class="tab-pane fade" id="panel-links">
+             <%= render 'site/admin_links' %>
+           </div>
+         </div>
 	    </div>
 	  </div>
 	</div>

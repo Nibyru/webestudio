@@ -1,0 +1,23 @@
+<section class="login">
+   <div class="row">
+      <div class="span6 offset2">
+         <h1>Informacion del Sitio</h1>
+         <br>
+          <%= simple_form_for Content.last || @new_content, html: {multipart: true} do |f| %>
+            <%= f.input  :person_message, label: 'Mensaje Personal' %>
+            <%= image_tag(@content.photo_url(:avatar), class: "circle-glob") if @content.photo? %>
+            <%= f.input  :photo, label: 'Foto' %>
+            <%= f.input  :person_info, label: 'Nombre' %>
+            <%= f.input  :about_us, as: :text, input_html: { class: 'wysihtml5' }, label: 'Acerca de Nosotros' %>
+            <%= f.input  :us_message, label: 'Nuestro mensaje' %>
+            <%= f.input  :direction, label: 'Direccion' %>
+            <%= f.input  :telephone, label: 'Telefono' %>
+            <%= f.input  :email %>
+            <%= f.input  :facebook %>
+            <%= f.input  :twitter %>
+            <%= f.input  :linkedin %>
+            <%= f.button :submit, 'Guardar Informacion', class: "btn btn-info" %>
+         <% end %>
+      </div>
+   </div>
+</section>
