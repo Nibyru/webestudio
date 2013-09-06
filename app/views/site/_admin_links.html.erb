@@ -1,23 +1,27 @@
-<section class="login">
-   <div class="row">
-      <div class="span6 offset2">
-         <h1>Links</h1>
-         <% @links.each do |link| %>
-             <%= simple_form_for link, html: {multipart: true} do |f| %>
-               <%= f.input  :name, label: 'Nombre' %>
-               <%= f.input  :url %>
-               <%= image_tag(link.photo_url(:link)) if link.photo? %> 
-               <%= f.input  :photo, label: 'Imagen' %>
-               <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", link, method: :delete, class: "borrar" %>
-            <% end %>
-            <hr>
-         <% end %>
-          <%= simple_form_for @link, html: {multipart: true} do |f| %>
-            <%= f.input  :name, label: 'Titulo' %>
-            <%= f.input  :url %> 
-            <%= f.input  :photo, label: 'Imagen' %>
-            <%= f.button :submit, 'Crear nuevo link', class: "btn btn-info" %>
-         <% end %>
-      </div>
+<div class="row">
+   <div class="span6 login">
+      <h2>Links</h2>
+       <%= simple_form_for @link, html: {multipart: true} do |f| %>
+         <%= f.input  :name, label: 'Titulo' %>
+         <%= f.input  :url %> 
+         <%= f.input  :photo, label: 'Imagen' %>
+         <%= f.button :submit, 'Crear nuevo link', class: "btn btn-info" %>
+      <% end %>
    </div>
-</section>
+   <div class="span5">
+      <h3>Lista de Links</h3><br>
+      <% @links.each do |link| %>
+          <%= simple_form_for link, html: {multipart: true} do |f| %>
+            <%= f.input  :name, label: 'Nombre' %>
+            <%= f.input  :url %>
+            <%= image_tag(link.photo_url(:link)) if link.photo? %> 
+            <%= f.input  :photo, label: 'Imagen' %>
+            <div class="btn-group">
+               <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", link, method: :delete, class: "borrar" %>
+                <%= link_to "Borrar", link, method: :delete, class: "btn btn-danger", confirm: "¿Esta seguro?" %>
+            </div>
+         <% end %>
+         <hr>
+      <% end %>
+   </div>
+</div>

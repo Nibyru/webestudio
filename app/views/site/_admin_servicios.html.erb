@@ -1,23 +1,28 @@
-<section class="login">
-   <div class="row">
-      <div class="span6 offset2">
-         <h1>Servicios</h1>
-         <% @services.each do |service| %>
-             <%= simple_form_for service do |f| %>
-               <%= f.input  :title, label: 'Titulo', class: 'input-block-level' %>
-               <%= f.input  :header, label: 'Introduccion', class: 'input-block-level' %>
-               <%= f.input  :body, label: 'Contenido', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
-               <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", service, method: :delete, class: "borrar" %>
-            <% end %>
-            <hr>
-         <% end %>
-          <%= simple_form_for @service do |f| %>
-            <%= f.hidden_field :symbol, value: 'icon-check' %>
+<div class="row">
+   <div class="span6 login">
+      <h2>Servicios</h2>
+
+       <%= simple_form_for @service do |f| %>
+         <%= f.hidden_field :symbol, value: 'icon-check' %>
+         <%= f.input  :title, label: 'Titulo', class: 'input-block-level' %>
+         <%= f.input  :header, label: 'Introduccion', class: 'input-block-level' %>
+         <%= f.input  :body, label: 'Contenido', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
+         <%= f.button :submit, 'Agregar servicio', class: "btn btn-info" %>
+      <% end %>
+   </div>
+   <div class="span5">
+      <h3>Lista de Servicios</h3><br>
+      <% @services.each do |service| %>
+          <%= simple_form_for service do |f| %>
             <%= f.input  :title, label: 'Titulo', class: 'input-block-level' %>
             <%= f.input  :header, label: 'Introduccion', class: 'input-block-level' %>
             <%= f.input  :body, label: 'Contenido', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
-            <%= f.button :submit, 'Agregar servicio', class: "btn btn-info" %>
+            <div class="btn-group">
+               <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", service, method: :delete, class: "borrar" %>
+               <%= link_to "Borrar", service, method: :delete, class: "btn btn-danger", confirm: "¿Esta seguro?" %>
+            </div>
          <% end %>
-      </div>
+         <hr>
+      <% end %>
    </div>
-</section>
+</div>

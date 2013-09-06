@@ -78,7 +78,7 @@
           <div class="container">
             <div class="row text-center">
             <% @users.each_with_index do |user, index| %>
-              <div class="clone span3">
+              <div class="clone span4 miembros">
                 <div class="team-member">
                   <%= image_tag(user.photo_url(:avatar)) if user.photo? %>
                 </div>
