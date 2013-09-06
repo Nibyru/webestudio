@@ -19,7 +19,7 @@
             <%= f.input  :job, label: 'Informacion' %>
             <%= f.input  :twitter %>
             <%= f.input  :facebook %>
-            <%= image_tag(user.photo_url(:avatar)) if user.photo? %> 
+            <%= image_tag(user.photo.url(:avatar)) if user.photo? %> 
             <%= f.input  :photo, label: 'Foto' %>
             <br>
             <div class="btn-group">

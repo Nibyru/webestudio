@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130829024044) do
+ActiveRecord::Schema.define(:version => 20130906215038) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -32,26 +32,32 @@ ActiveRecord::Schema.define(:version => 20130829024044) do
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
   create_table "contents", :force => true do |t|
-    t.string "person_message"
-    t.string "photo"
-    t.string "person_info"
-    t.string "about_us"
-    t.string "us_message"
-    t.string "direction"
-    t.string "telephone"
-    t.string "email"
-    t.string "facebook"
-    t.string "twitter"
-    t.string "linkedin"
+    t.string   "person_message"
+    t.string   "person_info"
+    t.string   "about_us"
+    t.string   "us_message"
+    t.string   "direction"
+    t.string   "telephone"
+    t.string   "email"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "linkedin"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "links", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.string   "url"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "photo"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "services", :force => true do |t|
@@ -66,9 +72,12 @@ ActiveRecord::Schema.define(:version => 20130829024044) do
   create_table "sliders", :force => true do |t|
     t.string   "title"
     t.string   "header"
-    t.string   "photo"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "users", :force => true do |t|
@@ -76,9 +85,12 @@ ActiveRecord::Schema.define(:version => 20130829024044) do
     t.string   "job"
     t.string   "twitter"
     t.string   "facebook"
-    t.string   "photo"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
 end

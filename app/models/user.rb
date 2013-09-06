@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
   
   validates :name, :job, presence: true
 
-  mount_uploader :photo, PhotoUploader
+  has_attached_file :photo, styles: { avatar: "270x203>" }, storage: :dropbox
 end

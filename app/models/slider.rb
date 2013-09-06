@@ -3,5 +3,5 @@ class Slider < ActiveRecord::Base
   
   validates :title, :photo, presence: true
 
-  mount_uploader :photo, PhotoUploader
+  has_attached_file :photo, styles: { slider: "1900x650>" }, storage: :dropbox
 end

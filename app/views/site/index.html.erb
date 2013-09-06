@@ -7,11 +7,11 @@
         <% @sliders.each_with_index do |slider, index| %>
         <% case index %>
         <% when 0 %>
-          <div class="item one active" style="background: url(<%= slider.photo_url(:slider) %>)">
+          <div class="item one active" style="background: url(<%= slider.photo.url(:slider) %>)">
         <% when 1 %>
-          <div class="item two" style="background: url(<%= slider.photo_url(:slider) %>)">
+          <div class="item two" style="background: url(<%= slider.photo.url(:slider) %>)">
         <% when 2 %>
-          <div class="item three" style="background: url(<%= slider.photo_url(:slider) %>)">
+          <div class="item three" style="background: url(<%= slider.photo.url(:slider) %>)">
         <% end %>
           <div class="container animated fadeInUp">
             <div class="carousel-caption">
@@ -53,7 +53,7 @@
       <div class="container">
         <div class="row">
           <div class="span3 margin-30" style="position: relative;">
-            <%= image_tag(@content.photo_url(:avatar), class: "circle-glob") if @content.photo? %>
+            <%= image_tag(@content.photo.url(:avatar), class: "circle-glob") if @content.photo? %>
             <span class="triangle-glob"></span>
           </div>
           
@@ -70,7 +70,7 @@
         <div class="row">
           <div class="span12">
             <p class="lead">Mira quienes somos</p>
-            <p><%= @content.about_us.html_safe %></p><br>
+            <p><%= @content.about_us.html_safe if @content.about_us %></p><br>
           </div>
         </div>
 
@@ -80,7 +80,7 @@
             <% @users.each_with_index do |user, index| %>
               <div class="clone span4 miembros">
                 <div class="team-member">
-                  <%= image_tag(user.photo_url(:avatar)) if user.photo? %>
+                  <%= image_tag(user.photo.url(:avatar)) if user.photo? %>
                 </div>
                     
                 <div class="row-fluid text-center">
@@ -126,15 +126,14 @@
         <% @links.each_with_index do |link, index| %>
           <div class="span4">
             <div class="thumbs">
-              <%= image_tag(link.photo_url(:link)) if link.photo? %>
-              <%#= image_tag('portfolio1.jpg', :alt => 'Image Size 430x280') %>
+              <%= image_tag(link.photo.url(:link)) if link.photo? %>
               <a href="<%= link.url %>" target="_blank">
                 <span class="title">
                   <span><i class="icon-link icon-2x"></i></span>
                 </span> 
               </a>
             </div>
-            
+
             <div class="project-title margin-30">
               <h4><%= link.name %></h4>
             </div>

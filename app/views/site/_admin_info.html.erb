@@ -4,7 +4,7 @@
       <br>
        <%= simple_form_for Content.last || @new_content, html: {multipart: true} do |f| %>
          <%= f.input  :person_message, label: 'Mensaje Personal' %>
-         <%= image_tag(@content.photo_url(:avatar), class: "circle-glob") if @content.photo? %>
+         <%= image_tag(@content.photo.url(:avatar), class: "circle-glob") if @content.photo? %>
          <%= f.input  :photo, label: 'Foto' %>
          <%= f.input  :person_info, label: 'Nombre' %>
          <%= f.input  :about_us, as: :text, input_html: { class: 'wysihtml5' }, label: 'Acerca de Nosotros' %>
