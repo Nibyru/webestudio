@@ -6,7 +6,7 @@
              <%= simple_form_for link, html: {multipart: true} do |f| %>
                <%= f.input  :name, label: 'Nombre' %>
                <%= f.input  :url %>
-               <%= image_tag(link.photo_url(:link)) if link.photo? %> 
+               <%= image_tag(link.photo.url(:link)) if link.photo? %> 
                <%= f.input  :photo, label: 'Imagen' %>
                <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", link, method: :delete, class: "borrar" %>
             <% end %>

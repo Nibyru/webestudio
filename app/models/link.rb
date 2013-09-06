@@ -3,5 +3,5 @@ class Link < ActiveRecord::Base
   
   validates :name, :url, presence: true
 
-  mount_uploader :photo, PhotoUploader
+  has_attached_file :photo, styles: { slider: "370x241>" }, storage: :dropbox
 end
