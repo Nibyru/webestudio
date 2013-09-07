@@ -3,5 +3,5 @@ class Link < ActiveRecord::Base
   
   validates :name, :url, presence: true
 
-  has_attached_file :photo, styles: { slider: "370x241>" }
+  has_attached_file :photo, styles: { slider: "370x241>" }, path: ":style/:id_:filename"
 end

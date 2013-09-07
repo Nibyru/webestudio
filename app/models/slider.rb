@@ -3,5 +3,5 @@ class Slider < ActiveRecord::Base
   
   validates :title, :photo, presence: true
 
-  has_attached_file :photo, styles: { slider: "1900x650>" }
+  has_attached_file :photo, styles: { slider: "1900x650>" }, path: ":style/:id_:filename"
 end
