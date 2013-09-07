@@ -66,6 +66,6 @@ Webestudio::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   Paperclip::Attachment.default_options[:storage] = :dropbox
-  Paperclip::Attachment.default_options[:path] = ":style/:id_:filename"
+  Paperclip::Attachment.default_options[:dropbox_options][:path] = ":style/:id_:filename"
   Paperclip::Attachment.default_options[:dropbox_credentials] = Rails.root.join("config/dropbox.yml")
 end
