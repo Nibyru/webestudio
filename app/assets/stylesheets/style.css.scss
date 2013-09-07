@@ -18,3 +18,8 @@
 	-moz-transform:rotate(30deg);
 	-o-transform:rotate(30deg);
 }
+.carousel .item {
+	background-size: 100%!important;
+	background-repeat: no-repeat!important;
+	background-position-y: 50%!important;
+}
