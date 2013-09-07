@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
   
   validates :name, :job, presence: true
 
-  has_attached_file :photo, styles: { avatar: "270x203>" }
+  has_attached_file :photo, styles: { avatar: "370x278>" }
 end
