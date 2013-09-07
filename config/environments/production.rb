@@ -68,7 +68,6 @@ Webestudio::Application.configure do
     storage: :dropbox,
     dropbox_credentials: Rails.root.join("config/dropbox.yml"),
     dropbox_options: {
-      path: proc { ":style/:id_:filename" }
-    }
+      path: ":style/:id_:filename"
   }
 end
