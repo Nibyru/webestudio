@@ -64,8 +64,5 @@ Webestudio::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-
-  Paperclip::Attachment.default_options[:storage] = :dropbox
-  Paperclip::Attachment.default_options[:dropbox_options][:path] = ":style/:id_:filename"
-  Paperclip::Attachment.default_options[:dropbox_credentials] = Rails.root.join("config/dropbox.yml")
+  config.paperclip_defaults = {storage: :dropbox, dropbox_credentials: Rails.root.join("config/dropbox.yml"), path: ":style/:id_:filename"}
 end
