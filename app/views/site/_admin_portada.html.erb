@@ -18,11 +18,11 @@
             <%= f.input  :header, label: 'Cabecera' %>
             <%= image_tag(slider.photo.url(:slider)) if slider.photo? %>
             <%= f.input  :photo, label: 'Foto' %>
-            <br><hr>
+            <br>
             <div class="btn-group">
                <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %>
                <%= link_to "Borrar", slider, method: :delete, class: "btn btn-danger", confirm: "¿Esta seguro?" %>
-            </div>
+            </div><hr>
          <% end %>
       <% end %>
    </div>
