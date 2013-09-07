@@ -2,6 +2,10 @@ class SiteController < ApplicationController
 	before_filter :authenticate_admin!, only: :admin
 	before_filter :instance_object, only: [:index, :admin]
 
+	def index
+		@slider = Slider.limit(3)
+	end
+
 	def services
 		@services = Service.all
 	end
