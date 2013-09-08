@@ -2,10 +2,10 @@
    <div class="span6 login">
       <h2>Servicios</h2>
 
-       <%= simple_form_for @service do |f| %>
+       <%= simple_form_for @service, html: {multipart: true}, defaults: { input_html: { class: 'input-block-level' } } do |f| %>
          <%= f.hidden_field :symbol, value: 'icon-check' %>
-         <%= f.input  :title, label: 'Titulo', class: 'input-block-level' %>
-         <%= f.input  :header, label: 'Introduccion', class: 'input-block-level' %>
+         <%= f.input  :title, label: 'Titulo' %>
+         <%= f.input  :header, label: 'Introduccion' %>
          <%= f.input  :body, label: 'Contenido', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
          <%= f.button :submit, 'Agregar servicio', class: "btn btn-info" %>
       <% end %>

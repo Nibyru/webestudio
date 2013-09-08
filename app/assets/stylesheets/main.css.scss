@@ -268,12 +268,13 @@ a:hover {
 .navbar-inverse .navbar-inner {
   background: $azul;
   background-repeat: repeat-x;
-  border-color: #195380;
+  border-color: #094370;
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#44ADFF', endColorstr='#44ADFF', GradientType=0)
 }
 
 .nav-collapse, .nav-collapse.collapse {
-    background: none repeat scroll 0 0 #44ADFF;
+    background: none repeat scroll 0 0 $azul;
+    text-align: center;
     height: 0;
     overflow: hidden;
 }
@@ -1453,14 +1454,13 @@ h1.admin-title {
 }
 
 .login{
-  background: #71767A;
+  background: #81868A;
   padding: 20px;
   border-radius: 10px;
   label{
     color: #eee;
     margin-top: 20px;
   }
-  input[type="text"],input[type="tel"],input[type="email"],input[type="url"],textarea{width: 95%;}
   #admin_remember_me{
     margin-top: 25px;
     width: 15px;

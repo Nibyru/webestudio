@@ -1,7 +1,7 @@
 <div class="row">
    <div class="span6 login">
       <h2>Portadas</h2>
-      <%= simple_form_for @slider, html: {multipart: true} do |f| %>
+      <%= simple_form_for @slider, html: {multipart: true}, defaults: { input_html: { class: 'input-block-level' } } do |f| %>
         <%= f.input  :title, label: 'Titulo' %>
         <%= f.input  :header, label: 'Cabecera' %>
         <%= f.input  :photo, label: 'Imagen', class: "btn btn-info" %>

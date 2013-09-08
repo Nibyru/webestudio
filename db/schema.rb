@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(:version => 20130906215038) do
   create_table "contents", :force => true do |t|
     t.string   "person_message"
     t.string   "person_info"
-    t.string   "about_us"
-    t.string   "us_message"
+    t.text     "about_us"
+    t.text     "us_message"
     t.string   "direction"
     t.string   "telephone"
     t.string   "email"
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(:version => 20130906215038) do
   create_table "services", :force => true do |t|
     t.string   "symbol"
     t.string   "title"
-    t.string   "header"
-    t.string   "body"
+    t.text     "header"
+    t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
