@@ -1504,12 +1504,20 @@ h1.admin-title {
 /* Desktops and laptops ----------- */
 @media (min-width: 980px) and (max-width: 1699px) {
 
+  .carousel {
+    margin-top: 90px;
+  }
+
 }
      
 
 
 /* Large screens ----------- */
 @media (min-width: 1700px) and (max-width: 2200px) {
+
+  .carousel {
+    margin-top: 90px;
+  }
 
 }   
 
