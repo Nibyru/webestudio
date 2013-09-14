@@ -417,7 +417,7 @@ a:hover {
 
 .carousel {
   margin-bottom: 0px;
-  margin-top: 90px;
+  margin-top: 0px;
   background: #31363a;
 }
 
@@ -1426,6 +1426,10 @@ p.lead {
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
+
+.carousel {
+  margin-top: 90px;
+}
 
 .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
     margin-left: 0px;
