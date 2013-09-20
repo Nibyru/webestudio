@@ -18,3 +18,15 @@
 	-moz-transform:rotate(30deg);
 	-o-transform:rotate(30deg);
 }
+.carousel .item {
+	background-size: cover!important;
+	background-repeat: no-repeat!important;
+	background-position-y: 50%!important;
+}
+.thumbs img{
+	width: 370px;
+	height: 241px;
+}
+.navbar-inverse .btn-navbar {
+	margin-top: 20px;
+}

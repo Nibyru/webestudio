@@ -1,36 +1,26 @@
 <div class="row">
    <div class="span6 login">
       <h2>Portadas</h2>
-      <ul>
-      <% @sliders.each do |slider| %>
-         <li>
-            <%= slider.title %> | <%= link_to "borrar", slider, method: :delete, class: "borrar" %>
-            <%= image_tag(slider.photo_url(:slider)) if slider.photo? %> 
-         </li>
-      <% end %>
-      </ul>
-      <% if @sliders.size <= 2 %>
-          <%= simple_form_for @slider, html: {multipart: true} do |f| %>
-            <%= f.input  :title, label: 'Titulo' %>
-            <%= f.input  :header, label: 'Cabecera' %>
-            <%= f.input  :photo, label: 'Imagen', class: "btn btn-info" %>
-            <%= f.button :submit, 'Agregar noticia', class: "btn btn-info" %>
-          <% end %>
+      <%= simple_form_for @slider, html: {multipart: true}, defaults: { input_html: { class: 'input-block-level' } } do |f| %>
+        <%= f.input  :title, label: 'Titulo' %>
+        <%= f.input  :header, label: 'Cabecera' %>
+        <%= f.input  :photo, label: 'Imagen', class: "btn btn-info" %>
+        <%= f.button :submit, 'Agregar noticia', class: "btn btn-info" %>
       <% end %>
    </div>
    <div class="span5">
       <h3>Lista de Portadas</h3>
       <% @sliders.each do |slider| %>
-         <%= simple_form_for @slider, html: {multipart: true} do |f| %>
+         <%= simple_form_for slider, html: {multipart: true} do |f| %>
             <%= f.input  :title, label: 'Titulo' %>
             <%= f.input  :header, label: 'Cabecera' %>
-            <%= image_tag(slider.photo_url(:slider)) if slider.photo? %>
+            <%= image_tag(slider.photo.url(:slider)) if slider.photo? %>
             <%= f.input  :photo, label: 'Foto' %>
-            <br><hr>
+            <br>
             <div class="btn-group">
                <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %>
                <%= link_to "Borrar", slider, method: :delete, class: "btn btn-danger", confirm: "¿Esta seguro?" %>
-            </div>
+            </div><hr>
          <% end %>
       <% end %>
    </div>

@@ -14,9 +14,12 @@ $azul:#3973A0;
 		border-bottom: 2px dashed #ddd;
 		h3{
 			display: inline-block;
-			color:$azul;
+			color: #3973a0;
 			font-weight: 400;
-			font-size: 30px;
+			font-size: 50px;
+			margin: 50px;
+			margin-left: 0;
+			line-height: 50px;
 		}
 		p{
 			color: #21262A;
@@ -28,7 +31,7 @@ $azul:#3973A0;
 		i{
 			display: inline-block;
 			margin-left: 12px;
-			margin-top: -10px;
+			margin-top: -25px;
 			color: $azul;
 		}
 		li{

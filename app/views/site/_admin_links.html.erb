@@ -1,7 +1,7 @@
 <div class="row">
    <div class="span6 login">
       <h2>Links</h2>
-       <%= simple_form_for @link, html: {multipart: true} do |f| %>
+       <%= simple_form_for @link, html: {multipart: true}, defaults: { input_html: { class: 'input-block-level' } } do |f| %>
          <%= f.input  :name, label: 'Titulo' %>
          <%= f.input  :url %> 
          <%= f.input  :photo, label: 'Imagen' %>
@@ -17,8 +17,8 @@
             <%= image_tag(link.photo.url(:link)) if link.photo? %> 
             <%= f.input  :photo, label: 'Imagen' %>
             <div class="btn-group">
-               <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", link, method: :delete, class: "borrar" %>
-                <%= link_to "Borrar", link, method: :delete, class: "btn btn-danger", confirm: "¿Esta seguro?" %>
+               <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %>
+               <%= link_to "Borrar", link, method: :delete, class: "btn btn-danger", confirm: "¿Esta seguro?" %>
             </div>
          <% end %>
          <hr>

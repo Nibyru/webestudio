@@ -1,7 +1,7 @@
 class Slider < ActiveRecord::Base
   attr_accessible :title, :header, :photo
   
-  validates :title, :photo, presence: true
+  validates :title, presence: true
 
-  has_attached_file :photo, styles: { slider: "1900x650>" }, storage: :dropbox
+  has_attached_file :photo, styles: { slider: "1900x650>" }
 end
