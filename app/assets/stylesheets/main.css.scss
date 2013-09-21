@@ -64,7 +64,8 @@
   src: local('Open Sans Extrabold Italic'), local('OpenSans-ExtraboldItalic'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxkCDe67GEgBv_HnyvHTfdew.woff) format('woff');
 }
 
-$azul:#3973A0;
+/*$azul:#3973a0;*/
+$azul:#3090C0;
 
 
 h1, h2, h3, h4, h5, h6, p {
@@ -700,6 +701,8 @@ a:hover {
 /* ==========================================================================
    Team Member Styles
    ========================================================================== */
+
+
 .team-member img {
   width: 100%;
   left: 0;
@@ -728,6 +731,8 @@ a:hover {
   padding-top: 3px;
 }
 
+.team-info h4 em {letter-spacing: 2px;}
+
 .socialize {
   background: #26292B;
   color: #ffffff;
@@ -745,7 +750,15 @@ a:hover {
   }
 }
 
-.miembros{margin-bottom: 20px;}
+.miembros{
+  float: none;
+  display: inline-block;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 20px;
+}
+
+
 
 /* ==========================================================================
    Pricing Styles
@@ -1016,12 +1029,18 @@ ul.social-icons-signup li a:hover {
   padding-bottom: 120px;
 }
 
+.span3.links-utiles {
+  float: none;
+  display: inline-block;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
 .thumbs {
 	width: 100%;
-	float: left;
   overflow: hidden;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .thumbs a {
