@@ -1,4 +1,7 @@
 Webestudio::Application.routes.draw do
+  resources :contacts
+
+
   devise_for :admins
 
   root :to => 'site#index'

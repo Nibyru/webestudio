@@ -17,6 +17,7 @@ private
 		@user     = User.new
 		@service  = Service.new
 		@slider   = Slider.new
+		@contact  = Contact.new
 		@new_content  = Content.new
 	end
 end

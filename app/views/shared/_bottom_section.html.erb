@@ -4,21 +4,14 @@
     <h3> Para ponerse en contacto con nosotros, por favor complete el formulario y nos comunicaremos a la brevedad.</h3>
       <div class="row">
         <div class="span6 offset3">
-          <form>
-            <label> Nombre: </label>
-            <input type="text">
-            <label> Empresa: </label>
-            <input type="text">
-            <label> Dirección: </label>
-            <input type="text">
-            <label> Teléfono: </label>
-            <input type="text">
-            <label> E-mail: </label>
-            <input type="text">
-            <label> Consulta: </label>
-            <textarea name="Consultas"></textarea>
-            <input type="submit" value="ENVIAR">
-          </form>
+          <%= simple_form_for @contact do |f| %>
+            <%= f.input :name %>
+            <%= f.input :company %>
+            <%= f.input :telephone %>
+            <%= f.input :email %>
+            <%= f.input :content %>
+            <%= f.submit %>
+          <% end %>
         </div>
       </div>
     </div>
