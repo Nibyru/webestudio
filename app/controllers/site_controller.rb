@@ -3,7 +3,6 @@ class SiteController < ApplicationController
 	before_filter :instance_object, only: [:index, :admin]
 
 	def index
-		@slider = Slider.limit(3)
 	end
 
 	def services
@@ -16,7 +15,7 @@ private
 		@link     = Link.new
 		@user     = User.new
 		@service  = Service.new
-		@slider   = Slider.new
+		@slider   = Slider.first || Slider.new
 		@contact  = Contact.new
 		@new_content  = Content.new
 	end

@@ -4,26 +4,15 @@
     ================================================== -->
     <div id="header" class="carousel slide animated fadeIn">
       <div class="carousel-inner">
-        <% @sliders.each_with_index do |slider, index| %>
-        <% case index %>
-        <% when 0 %>
-          <div class="item one active" style="background: url(<%= slider.photo.url(:slider) %>)">
-        <% when 1 %>
-          <div class="item two" style="background: url(<%= slider.photo.url(:slider) %>)">
-        <% when 2 %>
-          <div class="item three" style="background: url(<%= slider.photo.url(:slider) %>)">
-        <% end %>
+        <div class="item one active" style="background: url(<%= @slider.photo.url(:slider) %>)">
           <div class="container animated fadeInUp">
             <div class="carousel-caption">
-              <h1><%= slider.title %></h1>
-              <p class="lead margin-40"><em><%= slider.header %></em></p>
+              <h1><%= @slider.title %></h1>
+              <p class="lead margin-40"><em><%= @slider.header %></em></p>
             </div>
           </div>
         </div>
-        <% end %>
       </div>
-      <a class="left carousel-control hidden-phone" href="#header" data-slide="prev"><i class="icon-angle-left"></i></a>
-      <a class="right carousel-control hidden-phone" href="#header" data-slide="next"><i class="icon-angle-right"></i></a>
     </div><!-- /.carousel -->
     
     
