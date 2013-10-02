@@ -2,18 +2,20 @@
   <div id="formulario">
     <div class="container">
     <h3> Para ponerse en contacto con nosotros, por favor complete el formulario y nos comunicaremos a la brevedad.</h3>
+    <%= simple_form_for @contact do |f| %>
       <div class="row">
-        <div class="span6 offset3">
-          <%= simple_form_for @contact do |f| %>
-            <%= f.input :name %>
-            <%= f.input :company %>
-            <%= f.input :telephone %>
-            <%= f.input :email %>
-            <%= f.input :content %>
-            <%= f.submit %>
-          <% end %>
+        <div class="span5 offset1">
+          <%= f.input :name, placeholder:"Nombre", label: false %>
+          <%= f.input :company, placeholder:"Empresa", label: false %>
+          <%= f.input :telephone, placeholder:"Teléfono", label: false %>
+          <%= f.input :email, placeholder:"E-mail", label: false %>
+        </div>
+        <div class="span5">
+          <%= f.input :content, placeholder:"Consulta", label: false %>
+          <%= f.submit %>
         </div>
       </div>
+    <% end %>
     </div>
   </div>
   <div id="map">
