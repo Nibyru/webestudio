@@ -18,4 +18,14 @@
          <%= f.button :submit, 'Guardar Informacion', class: "btn btn-info" %>
       <% end %>
    </div>
+   <div class="span5 login">
+      <h2>Portada</h2>
+      <%= simple_form_for @slider, html: {multipart: true}, defaults: { input_html: { class: 'input-block-level' } } do |f| %>
+        <%= image_tag(@slider.photo.url(:slider)) if @slider.photo? %>
+        <%= f.input  :title, label: 'Titulo' %>
+        <%= f.input  :header, label: 'Cabecera' %>
+        <%= f.input  :photo, label: 'Imagen', class: "btn btn-info" %>
+        <%= f.button :submit, 'Agregar noticia', class: "btn btn-info" %>
+      <% end %>
+   </div>
 </div>

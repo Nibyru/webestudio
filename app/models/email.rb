@@ -2,6 +2,10 @@ class Email < ActionMailer::Base
   default from: 'contacto@cycestudiocontable.com'
 
   def send_email(contact)
-    mail( to: contact.email, subject: 'Thanks for signing up' )
+    mail( to: contact.email, subject: 'Gracias por comunicarse' )
+  end
+
+  def send_admin_email(contact)
+    mail( to: 'contacto@cycestudiocontable.com', subject: 'Nuevo contacto recibido' )
   end
 end
