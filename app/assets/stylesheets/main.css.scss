@@ -1096,7 +1096,7 @@ ul.icons li {
    Testimonial styles
    ========================================================================== */
 #testimonial {
-  background: url(testimonial-bg2.jpg) no-repeat;
+  background: url(testimonial-bg.jpg) no-repeat;
   background-size: cover;
   padding-top: 120px;
   padding-bottom: 120px;
@@ -1279,7 +1279,7 @@ ul.social-icons li a:hover {
   text-decoration: none;
 }
 
-#footer p a:hover{
+#footer p a:hover, .blue-color{
   color: $azul;
 }
 
