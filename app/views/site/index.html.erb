@@ -3,6 +3,12 @@
     Change your images in the main.css file.
     ================================================== -->
     <div id="header" class="carousel slide animated fadeIn">
+      <div class="top-info">
+        <i class="icon-phone"></i> <%= @content.telephone %>  |  
+        <a href="mailto:<%= @content.email %>">
+          <i class="icon-envelope-alt"></i> <%= @content.email %>
+        </a>
+      </div>
       <div class="carousel-inner">
         <div class="item one active" style="background: url(<%= @slider.photo.url(:slider) %>)">
           <div class="container animated fadeInUp">
