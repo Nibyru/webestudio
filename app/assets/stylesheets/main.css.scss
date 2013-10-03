@@ -467,8 +467,6 @@ a:hover {
   background-size: cover;
 }
 
-
-
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.7);
   position: static;
@@ -477,11 +475,10 @@ a:hover {
   margin-top: 35%;
 }
 
-
-
 /* ==========================================================================
    Content Styles
    ========================================================================== */
+
 #content1 {
   background: #ffffff;
   padding-top: 100px;
@@ -494,7 +491,7 @@ a:hover {
 
 #content1 p.lead {
   color: #44ADFF;
-  font-weight: bold;
+    font-weight: bold;
 }
 
 #content2 {
@@ -998,9 +995,7 @@ ul.social-icons-signup li a:hover {
    ========================================================================== */
 #services {
   padding-top: 120px;
-  padding-bottom: 120px;
 }
-
 
 .service:hover i, .service:hover p {
   color: #26292B;
@@ -1099,6 +1094,7 @@ ul.icons li {
 /* ==========================================================================
    Testimonial styles
    ========================================================================== */
+#testimonial { border-top: 90px solid #fff; }
 #testimonial, #message {
   background: #26292B;
   padding-top: 50px;
@@ -1495,7 +1491,7 @@ p.lead {
 @media (min-width: 768px) and (max-width: 979px) {
 
 .carousel {
-  margin-top: 90px;
+  padding-top: 90px;
 }
 
 .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
