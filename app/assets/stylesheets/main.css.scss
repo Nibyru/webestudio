@@ -295,10 +295,6 @@ a:hover {
   color: rgba(49,54,58,0.9);
 }
 
-.brand {
-  margin-top: 15px;
-}
-
 .navbar .nav > li > a {
   color: #FFFFFF;
   float: none;
@@ -337,6 +333,11 @@ a:hover {
 
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
     box-shadow: none;
+}
+
+.navbar-inverse .brand {
+  margin-top: 0px;
+  padding-top: 15px;
 }
 
 .dropdown-menu {
@@ -486,9 +487,15 @@ a:hover {
   padding-top: 100px;
   padding-bottom: 70px;
 }
-#content1 p { color: #26292B; }
+#content1 p {
+  color: #26292B;
+  font-size: 25px;
+}
 
-#content1 p.lead { color: #44ADFF; }
+#content1 p.lead {
+  color: #44ADFF;
+  font-weight: bold;
+}
 
 #content2 {
   background: url(grid_noise.png) repeat;
@@ -559,8 +566,6 @@ a:hover {
 .side-links li a:hover {
   color: #31363a;
 }
-
-
 
 /* ==========================================================================
    About Page Styles
@@ -1014,7 +1019,6 @@ ul.social-icons-signup li a:hover {
    Message Styles
    ========================================================================== */
 #message {
-  background: #26292B;
   padding-top: 100px;
   padding-bottom: 70px;
 }
@@ -1095,11 +1099,11 @@ ul.icons li {
 /* ==========================================================================
    Testimonial styles
    ========================================================================== */
-#testimonial {
-  background: url(testimonial-bg.jpg) no-repeat;
-  background-size: cover;
-  padding-top: 100px;
+#testimonial, #message {
+  background: #26292B;
+  padding-top: 50px;
   padding-bottom: 50px;
+  text-align: center;
 }
 
 .testimonial-source {
@@ -1572,8 +1576,6 @@ h1.admin-title {
   }
 
 }
-     
-
 
 /* Large screens ----------- */
 @media (min-width: 1700px) and (max-width: 2200px) {
