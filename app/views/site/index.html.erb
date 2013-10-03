@@ -47,12 +47,12 @@
     <section id="testimonial">
       <div class="container">
         <div class="row">
-          <div class="span3 margin-30" style="position: relative;">
+          <div class="span3 margin-30" style="position: relative; display:none;">
             <%= image_tag(@content.photo.url(:avatar), class: "circle-glob") if @content.photo? %>
             <span class="triangle-glob"></span>
           </div>
           
-          <div class="span9">
+          <div class="span12">
             <h2>“<%= @content.person_message %>”</h2>
             <div class="testimonial-source pull-right"><%= @content.person_info %></div>
           </div>
@@ -69,7 +69,7 @@
           </div>
         </div>
 
-        <section>
+        <section style="display: none;">
           <div class="container">
             <div class="row text-center integrantes">
             <% @users.each do |user| %>
