@@ -295,10 +295,6 @@ a:hover {
   color: rgba(49,54,58,0.9);
 }
 
-.brand {
-  margin-top: 15px;
-}
-
 .navbar .nav > li > a {
   color: #FFFFFF;
   float: none;
@@ -337,6 +333,11 @@ a:hover {
 
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
     box-shadow: none;
+}
+
+.navbar-inverse .brand {
+  margin-top: 0px;
+  padding-top: 15px;
 }
 
 .dropdown-menu {
@@ -466,8 +467,6 @@ a:hover {
   background-size: cover;
 }
 
-
-
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.7);
   position: static;
@@ -476,19 +475,25 @@ a:hover {
   margin-top: 35%;
 }
 
-
-
 /* ==========================================================================
    Content Styles
    ========================================================================== */
+
 #content1 {
   background: #ffffff;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 100px;
+  padding-bottom: 70px;
 }
-#content1 p { color: #26292B; }
+#content1 p {
+  color: #26292B;
+  font-size: 25px;
+  line-height: 35px;
+}
 
-#content1 p.lead { color: #44ADFF; }
+#content1 p.lead {
+  color: #44ADFF;
+    font-weight: bold;
+}
 
 #content2 {
   background: url(grid_noise.png) repeat;
@@ -559,8 +564,6 @@ a:hover {
 .side-links li a:hover {
   color: #31363a;
 }
-
-
 
 /* ==========================================================================
    About Page Styles
@@ -993,9 +996,7 @@ ul.social-icons-signup li a:hover {
    ========================================================================== */
 #services {
   padding-top: 120px;
-  padding-bottom: 120px;
 }
-
 
 .service:hover i, .service:hover p {
   color: #26292B;
@@ -1014,9 +1015,8 @@ ul.social-icons-signup li a:hover {
    Message Styles
    ========================================================================== */
 #message {
-  background: #26292B;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 100px;
+  padding-bottom: 70px;
 }
 
 
@@ -1095,11 +1095,12 @@ ul.icons li {
 /* ==========================================================================
    Testimonial styles
    ========================================================================== */
-#testimonial {
-  background: url(testimonial-bg.jpg) no-repeat;
-  background-size: cover;
-  padding-top: 120px;
-  padding-bottom: 120px;
+#testimonial { border-top: 90px solid #fff; }
+#testimonial, #message {
+  background: #26292B;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
 }
 
 .testimonial-source {
@@ -1370,6 +1371,10 @@ h1 {
 .carousel-caption {
   max-width: 100%;
   text-align: center;
+  h1{
+    font-size: 50px;
+    line-height: 100px;
+  }
 }
 
 .carousel .item {
@@ -1487,7 +1492,7 @@ p.lead {
 @media (min-width: 768px) and (max-width: 979px) {
 
 .carousel {
-  margin-top: 90px;
+  padding-top: 90px;
 }
 
 .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
@@ -1568,8 +1573,6 @@ h1.admin-title {
   }
 
 }
-     
-
 
 /* Large screens ----------- */
 @media (min-width: 1700px) and (max-width: 2200px) {
@@ -1581,3 +1584,24 @@ h1.admin-title {
 }   
 
 @media (max-width:600px){#formulario{  padding-right:10px;}}
+
+
+.carousel-caption {
+  margin-top: 470px;
+  h1{
+    font-size: 50px;
+    line-height: 100px;
+  }
+}
+.top-info {
+  position: fixed;
+  top: 91px;
+  right: 0%;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  padding: 3px 7px;
+  width: 30%;
+  font-size: 12px;
+  a{ color: #fff;}
+}

@@ -7,14 +7,14 @@
         <span class="icon-bar"></span>
       </a>
       <%= link_to root_path, class: "brand" do %>
-        <%= image_tag('logo.png', alt: 'logo') %>
+        <%= image_tag('logo2.png', alt: 'logo') %>
       <% end %>
       <div class="nav-collapse collapse">
       <% if current_page?(root_path) %>
         <ul class="nav pull-right">
-          <li class="active"><a class="scroll" href="#top">Inicio</a></li>
+          <li class="active"><a class="scroll" href="#header">Inicio</a></li>
           <li class=""><a class="scroll" href="#services">Servicios</a></li>
-          <li class=""><a class="scroll" href="#content1">Nosotros</a></li>
+          <li class=""><a class="scroll" href="#testimonial">Nosotros</a></li>
           <li class=""><a class="scroll" href="#links">Links</a></li>
           <li class=""><a class="scroll" href="#bottom">Contacto</a></li>
           <% if admin_signed_in? %>
@@ -32,7 +32,7 @@
             <%= link_to 'Servicios', root_path(anchor: 'services') %>
           </li>
           <li class="">
-            <%= link_to 'Nosotros', root_path(anchor: 'content1') %>
+            <%= link_to 'Nosotros', root_path(anchor: 'testimonial') %>
           </li>
           <li class="">
             <%= link_to 'Links', root_path(anchor: 'content1') %>

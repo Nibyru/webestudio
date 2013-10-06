@@ -27,7 +27,7 @@
         <p>
           <i class="icon-hand-up"></i> Mapa Interactivo | 
           <b class="blue-color"><%= @content.direction %>, Jujuy, Argentina</b> | 
-          <%= @content.telephone %>  |  
+          <i class="icon-phone"></i> <%= @content.telephone %>  |  
           <a href="mailto:<%= @content.email %>">
             <i class="icon-envelope-alt"></i> <%= @content.email %>
           </a>
@@ -43,6 +43,7 @@
           <li><a class="twitter" href="<%= @content.twitter %>" target="_blank"><i class="icon-twitter icon-3x"></i></a></li>
           <li><a class="facebook" href="<%= @content.facebook %>" target="_blank"><i class="icon-facebook icon-3x"></i></a></li>
           <li><a class="linkedin" href="<%= @content.facebook %>" target="_blank"><i class="icon-linkedin icon-3x"></i></a></li>
+          <li><%= image_tag('card.png') %></li>
         </ul>
       </div>
     </div>

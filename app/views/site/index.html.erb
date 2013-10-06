@@ -3,6 +3,12 @@
     Change your images in the main.css file.
     ================================================== -->
     <div id="header" class="carousel slide animated fadeIn">
+      <div class="top-info">
+        <i class="icon-phone"></i> <%= @content.telephone %>  |  
+        <a href="mailto:<%= @content.email %>">
+          <i class="icon-envelope-alt"></i> <%= @content.email %>
+        </a>
+      </div>
       <div class="carousel-inner">
         <div class="item one active" style="background: url(<%= @slider.photo.url(:slider) %>)">
           <div class="container animated fadeInUp">
@@ -41,14 +47,14 @@
     <section id="testimonial">
       <div class="container">
         <div class="row">
-          <div class="span3 margin-30" style="position: relative;">
+          <div class="span3 margin-30" style="position: relative; display:none;">
             <%= image_tag(@content.photo.url(:avatar), class: "circle-glob") if @content.photo? %>
             <span class="triangle-glob"></span>
           </div>
           
-          <div class="span9">
+          <div class="span12">
             <h2>“<%= @content.person_message %>”</h2>
-            <div class="testimonial-source pull-right"><%= @content.person_info %></div>
+            <div class="testimonial-source pull-right" style="display:none;"><%= @content.person_info %></div>
           </div>
         </div>
       </div>
@@ -58,12 +64,12 @@
       <div class="container">
         <div class="row">
           <div class="span12">
-            <p class="lead">Mira quienes somos</p>
+            <p class="lead">Principios y valores</p>
             <p><%= @content.about_us.html_safe if @content.about_us %></p><br>
           </div>
         </div>
 
-        <section>
+        <section style="display: none;">
           <div class="container">
             <div class="row text-center integrantes">
             <% @users.each do |user| %>
@@ -96,7 +102,7 @@
 <!--Message Section-->
     <section id="message">
       <div class="container">
-        <div class="row margin-40">
+        <div class="row">
           <div class="span12 text-center">
             <h2><%= @content.us_message %></h2>
           </div>
