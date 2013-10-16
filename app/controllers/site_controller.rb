@@ -7,6 +7,7 @@ class SiteController < ApplicationController
 
 	def services
 		@services = Service.all
+		@contact  = Contact.new
 	end
 
 private
