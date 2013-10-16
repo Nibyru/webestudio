@@ -7,6 +7,7 @@ class Email < ActionMailer::Base
   end
 
   def send_admin_email(contact)
+    @user = contact
     mail( to: 'contacto@cycestudiocontable.com', subject: 'Nuevo contacto recibido' )
   end
 end
