@@ -1,5 +1,5 @@
 class Email < ActionMailer::Base
-  default from: 'contacto@cycestudiocontable.com'
+  default from: 'contacto@cycestudiocontable.com.ar'
 
   def send_email(contact)
     @user = contact
@@ -8,6 +8,6 @@ class Email < ActionMailer::Base
 
   def send_admin_email(contact)
     @user = contact
-    mail( to: 'contacto@cycestudiocontable.com', subject: 'Nuevo contacto recibido' )
+    mail( to: 'contacto@cycestudiocontable.com.ar', subject: 'Nuevo contacto recibido' )
   end
 end

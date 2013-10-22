@@ -13,11 +13,11 @@ class SiteController < ApplicationController
 private
 
 	def instance_object
-		@link     = Link.new
-		@user     = User.new
-		@service  = Service.new
-		@slider   = Slider.first || Slider.new
-		@contact  = Contact.new
+		@link         = Link.new
+		@user         = User.new
+		@service      = Service.new
+		@slider       = Slider.first || Slider.new
+		@contact      = Contact.new
 		@new_content  = Content.new
 	end
 end
