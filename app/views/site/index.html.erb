@@ -29,7 +29,7 @@
           <% @services.each_with_index do |service, index| %>
             <div class="span4 service margin-30">
               <%= link_to services_path do %>
-                <i class="<%= service.symbol %> icon-4x light-gray"></i>
+                <i class="<%= service.symbol %> icon-4x gray"></i>
                 <h3><%= service.title %></h3>
                 <p><%= service.header %></p>
               <% end %>
@@ -68,7 +68,7 @@
             <p><%= @content.about_us.html_safe if @content.about_us %></p><br>
           </div>
         </div>
-z
+
         <section style="display: none;">
           <div class="container">
             <div class="row text-center integrantes">
