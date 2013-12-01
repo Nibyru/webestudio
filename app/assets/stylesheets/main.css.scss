@@ -1611,3 +1611,28 @@ h1.admin-title {
   font-size: 12px;
   a{ color: #fff;}
 }
+
+
+.mail-enviado{
+  margin: 150px 0 80px 0;
+  box-shadow: 1px 1px 10px #70767A;
+  padding: 0 20px 20px 50px;
+  background: #F7F8F9;
+  h2{color: #30363A; font-weight:400;}
+  h3{color: #353B3F; padding-bottom:30px;}
+  p{color: #30363A; font-size:20px;}
+}
+
+.mail-recibido{
+  margin: 150px 0 80px 0;
+  padding: 0 20px;
+  h3{color: #353B3F; padding-bottom:30px;}
+  p{
+    color: #30363A;
+    font-size:20px;
+    padding-bottom:10px;
+    line-height:30px;
+    text-align:justify;
+  }
+  b{padding-right:5px;}
+}  

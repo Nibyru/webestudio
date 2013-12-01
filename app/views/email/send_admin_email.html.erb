@@ -4,11 +4,15 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Nuevo contacto</h1>
-    <p>Nombre: <%= @user.name %></p>
-    <p>Email: <%= @user.email %></p>
-    <p>Empresa: <%= @user.company %></p>
-    <p>Telefono: <%= @user.telephone %></p>
-    <p>Mensaje: <%= @user.content %></p>
+    <div class="container">
+      <div class="row  mail-recibido">
+        <h3>Nuevo contacto</h3>
+        <p>Nombre: <%= @user.name %></p>
+        <p>Email: <%= @user.email %></p>
+        <p>Empresa: <%= @user.company %></p>
+        <p>Telefono: <%= @user.telephone %></p>
+        <p>Mensaje: <%= @user.content %></p>
+      </div>
+    </div>
   </body>
 </html>
