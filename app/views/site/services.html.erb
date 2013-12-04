@@ -1,16 +1,13 @@
-<!--
 <section id="services">
    <div class="container">
      <div class="row">
-      	<% @services.each_with_index do |service, index| %>
-      	<article id="servicio-<%= index %>">
-      		<h3><%= service.title %> <i class="icon-check"></i></h3>
-      		<p><%= service.header %>
-      		<p><%= service.body.html_safe %>
-      	</article>
-      	<% end %>
+        <% @services.each_with_index do |service, index| %>
+        <article id="servicio-<%= index %>">
+          <h3><%= service.title %> <i class="icon-check"></i></h3>
+          <p><%= service.header %>
+          <p><%= service.body.html_safe %>
+        </article>
+        <% end %>
       </div>
    </div>
 </section>
--->
-
