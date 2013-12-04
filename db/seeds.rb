@@ -68,3 +68,12 @@
 		)
 	end
 	puts "<<<<<<<<<< Services creados con exito >>>>>>>>>>"
+	puts "<<<<<<<<<< Creando Contact >>>>>>>>>>"
+	Contact.create(
+		name: "chizzo",
+		company: "La Renga",
+		telephone: 123456,
+		email: "la_renga@gmail.com",
+		content: "hola que tal? todo bien??"
+	)
+	puts "<<<<<<<<<< Contact creados con exito >>>>>>>>>>"
