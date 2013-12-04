@@ -18,4 +18,3 @@
 //= require rotate
 //= require jquery_nested_form
 //= require bootstrap-wysihtml5
-
