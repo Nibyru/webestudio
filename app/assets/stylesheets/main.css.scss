@@ -267,6 +267,17 @@ a:hover {
    Navigation styles
    ========================================================================== */
 
+.brand h1{
+  font-size: 10px;
+  color:transparent;
+  text-shadow: none;
+  line-height: 0;
+  width: 228px;
+  height: 59px;
+  background:url("logo2.png");
+  background-size:100%;
+}
+
 .navbar-inverse .navbar-inner {
   background: $azul;
   background-repeat: repeat-x;
