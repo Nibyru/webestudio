@@ -1034,7 +1034,8 @@ ul.social-icons-signup li a:hover {
   opacity: 1;
   position: absolute;
   z-index: 10;
-  box-shadow: 0px 0px 7px #000;
+  box-shadow: none;
+  padding-bottom:50px;
 }
 
 /* ==========================================================================
@@ -1538,8 +1539,11 @@ h1.admin-title {
   text-align: center;
 }
 
+
 .login{
-  background: #81868A;
+  position: absolute;
+  top:25%;
+  background: #A1A6AA;
   padding: 20px;
   border-radius: 10px;
   label{
