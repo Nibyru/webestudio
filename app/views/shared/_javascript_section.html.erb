@@ -1,0 +1,26 @@
+
+<!-- Javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<%= javascript_include_tag "application" %>
+
+<script>
+$(document).ready(function(){
+  $(function(){
+    $('#header').carousel()
+  });
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+      animation: "slide"
+    });
+  });
+  $('.wysihtml5').each(function(i, elem) {
+    $(elem).wysihtml5({
+      "font-styles": false,
+      "link": false,
+      "image": false
+    });
+  });
+})
+
+</script>

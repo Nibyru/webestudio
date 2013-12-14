@@ -1,6 +1,7 @@
 class SiteController < ApplicationController
 	before_filter :authenticate_admin!, only: :admin
 	before_filter :instance_object, only: [:index, :admin]
+	layout 'admin', only: :admin
 
 	def index
 	end
