@@ -2,7 +2,7 @@ Webestudio::Application.routes.draw do
   resources :contacts
 
 
-  devise_for :admins
+  devise_for :admins, controllers: { sessions: "admins/sessions" }
 
   root to: 'site#index'
   match 'admin' => 'site#admin'
@@ -14,5 +14,4 @@ Webestudio::Application.routes.draw do
   resources :users
   resources :sliders
   resources :contents
-
 end
