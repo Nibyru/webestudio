@@ -1,5 +1,5 @@
 <div class="row">
-   <div class="span6 login" style='position: static!important;'>
+   <div class="span6 grey-box">
       <h2>Servicios</h2>
 
        <%= simple_form_for @service, html: {multipart: true}, defaults: { input_html: { class: 'input-block-level' } } do |f| %>
@@ -10,7 +10,7 @@
          <%= f.button :submit, 'Agregar servicio', class: "btn btn-info" %>
       <% end %>
    </div>
-   <div class="span5" style='position: static!important;'>
+   <div class="span5 list">
       <h3>Lista de Servicios</h3><br>
       <% @services.each do |service| %>
           <%= simple_form_for service do |f| %>
@@ -18,7 +18,7 @@
             <%= f.input  :header, label: 'Introduccion', class: 'input-block-level' %>
             <%= f.input  :body, label: 'Contenido', as: :text, input_html: { class: 'wysihtml5 input-block-level' } %>
             <div class="btn-group">
-               <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %> <%= link_to "Borrar", service, method: :delete, class: "borrar" %>
+               <%= f.button :submit, 'Guardar cambios', class: "btn btn-info" %>
                <%= link_to "Borrar", service, method: :delete, class: "btn btn-danger", confirm: "¿Esta seguro?" %>
             </div>
          <% end %>

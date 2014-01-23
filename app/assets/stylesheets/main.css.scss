@@ -1539,7 +1539,6 @@ h1.admin-title {
   text-align: center;
 }
 
-
 .login{
   position: absolute;
   top:25%;
@@ -1553,6 +1552,25 @@ h1.admin-title {
   #admin_remember_me{
     margin-top: 25px;
     width: 15px;
+  }
+  .btn-info{
+    margin-top: 10px;
+    background: $azul;
+    display: inline-block;
+  }
+  .checkbox.inline+.checkbox.inline {margin-left: 0px;}
+  .button{background: $azul;}
+
+}
+
+.grey-box{
+  position: static;
+  background: #A1A6AA;
+  padding: 20px;
+  border-radius: 10px;
+  label{
+    color: #eee;
+    margin-top: 20px;
   }
   .btn-info{
     margin-top: 10px;
@@ -1585,6 +1603,13 @@ h1.admin-title {
 
 .btn-danger{background: $azul;}
 .btn-danger:hover{background:#195380;}
+
+.list{
+  background: #A1A6AA;
+  padding: 0 20px;
+  border-radius: 10px;
+  textarea,input{ width:96%; }
+}
 
 /* Desktops and laptops ----------- */
 @media (min-width: 980px) and (max-width: 1699px) {
