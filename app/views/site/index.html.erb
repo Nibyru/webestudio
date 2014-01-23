@@ -28,7 +28,7 @@
         <div class="row text-center">
           <% @services.each_with_index do |service, index| %>
             <div class="span4 service margin-30">
-              <%= link_to services_path do %>
+              <%= link_to services_path(anchor: "servicio-#{index}") do %>
                 <i class="<%= service.symbol %> icon-4x gray"></i>
                 <h3><%= service.title %></h3>
                 <p><%= service.header %></p>
