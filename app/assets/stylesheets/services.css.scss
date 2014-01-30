@@ -1,7 +1,9 @@
 $azul:#0091BE;
 
-#services{
+#servicios{
+	background:#F2F2F2;
 	margin:auto;
+	padding-bottom:50px;
 	h2{
 		color: #eee;
 		text-shadow: 1px 1px 0px #888;
@@ -10,23 +12,15 @@ $azul:#0091BE;
 		text-align: center;
 	}
 	article{
-		padding: 2em 0;
-		border-bottom: 2px dashed #ddd;
+		padding: 110px 30px 0 30px;
 		h3{
 			display: inline-block;
 			color: #3973a0;
 			font-weight: 400;
 			font-size: 50px;
-			margin: 50px;
-			margin-left: 0;
+			margin: 0;
+			margin-bottom: 30px;
 			line-height: 50px;
-		}
-		p{
-			color: #21262A;
-			font-size: 19px;
-			line-height: 24px;
-			font-weight: 300;
-			font-family: 'Open Sans', sans-serif;
 		}
 		i{
 			display: inline-block;
@@ -34,15 +28,15 @@ $azul:#0091BE;
 			margin-top: -25px;
 			color: $azul;
 		}
-		li{
+		p,li{
+			color: #41464A;
+			font-size: 23px;
+			font-weight: 400;
 			font-family: 'Open Sans', sans-serif;
-			font-size: 18px;
-			line-height: 26px;
-			font-weight: 300;
-			color: #21262A;
+		}
+		li{
 			margin:1em 0;
 			list-style-type: circle;
 		}
 	}
-	#societarios{border:none;}
 }
