@@ -20,6 +20,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'taps'
 gem 'slim'
 gem 'devise'
 gem 'nested_form'
